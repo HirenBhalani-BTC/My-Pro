@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<!-- saved from url=(0361)http://disqus.com/embed/comments/?base=default&disqus_version=634c8a73&f=learn-code-the-hard-way&t_u=http%3A%2F%2Fruby.learncodethehardway.org%2Fbook%2Fex48.html&t_d=Exercise%2048%3A%20Advanced%20User%20Input%20%E2%80%94%20Learn%20Ruby%20The%20Hard%20Way&t_t=Exercise%2048%3A%20Advanced%20User%20Input%20%E2%80%94%20Learn%20Ruby%20The%20Hard%20Way&s_o=default#2 -->
+<html lang="en" dir="ltr" class="js no-touch localstorage sessionstorage contenteditable use-opacity-transitions"><!--<![endif]--><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Disqus Comments</title>
+
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    
+    <style>
+        html {
+            overflow: hidden;
+        }
+        
+    </style>
+
+<link rel="stylesheet" href="http://a.disquscdn.com/next/styles/lounge.89e34576d4db1cdb2f6572e896497fe3.css"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="remote/config" src="config.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="common.bundle" src="common.5acc88c53c687746db4a4045c0f53ad2.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="lounge.bundle" src="lounge.53fd56730a28a77a1c70a5a943a17263.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="http://www.google-analytics.com/ga.js" src="ga.js"></script><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="http://b.scorecardresearch.com/beacon.js" src="beacon.js"></script><style id="css_1405501711027"></style><!--<base target="_parent" href="http://ruby.learncodethehardway.org/book/ex48.html">--><base href="." target="_parent"><script src="event.js" async="" charset="UTF-8"></script><link rel="stylesheet" href="http://a.disquscdn.com/next/styles/discovery.9d5388d06dc38ac22e5801bcdb736112.css"><script type="text/javascript" charset="utf-8" async="" data-requirecontext="_" data-requiremodule="discovery/main" src="discovery.cb05e5fd6822805dd64a82d7c26a064d.js"></script><script src="event(1).js" async="" charset="UTF-8"></script><script src="event(2).js" async="" charset="UTF-8"></script></head>
+<body style="">
+    
+    <!--[if lte IE 8]>
+<script src="//a.disquscdn.com/1405376578/build/vendor/ie8.js"></script>
+<![endif]-->
+<!--[if IE 9]>
+<script src="//a.disquscdn.com/1405376578/build/vendor/ie9.js"></script>
+<![endif]-->
+
+    
+<script type="text/json" id="disqus-urls">{
+    "root":"//disqus.com",
+    "next":"//a.disquscdn.com/next/634c8a73"
+}</script>
+
+    
+
+    <div id="error" style="display:none; text-align: center">
+        <p>We were unable to load Disqus. If you are a moderator please see our <a href="http://docs.disqus.com/help/83/"> troubleshooting guide</a>. </p>
+    </div>
+
+    
+    <script type="text/json" id="disqus-forumData">{"session":{"canModerate":false,"isReadOnly":null,"audienceSyncVerified":false,"canReply":true,"notificationCount":null,"mustVerifyEmail":false},"features":{},"forum":{"name":"Learn Code The Hard way","founder":"20449127","settings":{"canEnableSponsoredComments":false,"discoveryVariant":"max","allowAnonPost":false,"allowMedia":false,"moderatorText":null,"typeface":"auto","promotedDiscoveryEnabled":true,"discoveryMax":true,"ssoRequired":false,"discoveryLocked":false,"audienceSyncEnabled":false,"hasCustomAvatar":false,"organicDiscoveryEnabled":true,"backplaneEnabled":false,"discoverySettingsUrl":"https://learn-code-the-hard-way.disqus.com/admin/settings/ads/","discoveryThumbnailsEnabled":true,"colorScheme":"auto","sponsoredCommentsEnabled":false,"linkAffiliationEnabled":true},"url":"http://learncodethehardway.org/","favicon":{"permalink":"http://disqus.com/api/forums/favicons/learn-code-the-hard-way.jpg","cache":"//a.disquscdn.com/1405376578/images/favicon-default.png"},"language":"en","avatar":{"small":{"permalink":"http://disqus.com/api/forums/avatars/learn-code-the-hard-way.jpg?size=32","cache":"//a.disquscdn.com/1405376578/images/noavatar32.png"},"large":{"permalink":"http://disqus.com/api/forums/avatars/learn-code-the-hard-way.jpg?size=92","cache":"//a.disquscdn.com/1405376578/images/noavatar92.png"}},"pk":1188756,"id":"learn-code-the-hard-way"}}</script>
+
+    
+    <script type="text/json" id="disqus-threadData">{"cursor":{"hasPrev":false,"prev":null,"total":7,"hasNext":false,"next":"1:0:0"},"code":0,"response":{"lastModified":1395458650,"posts":[{"isFlagged":false,"forum":"learn-code-the-hard-way","parent":null,"author":{"username":"twitter-102305965","about":"","name":"Richardson Dackam","url":"http://twitter.com/RichardsonDx","isAnonymous":false,"rep":1.2329599999999998,"profileUrl":"http://disqus.com/twitter-102305965/","reputation":1.2329599999999998,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2012-02-16T08:57:10","id":"22463953","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/twitter-102305965.jpg","cache":"//a.disquscdn.com/uploads/users/2246/3953/avatar32.jpg?1329716249"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/twitter-102305965.jpg","cache":"//a.disquscdn.com/uploads/users/2246/3953/avatar92.jpg?1329716249","large":{"permalink":"http://disqus.com/api/users/avatars/twitter-102305965.jpg","cache":"//a.disquscdn.com/uploads/users/2246/3953/avatar92.jpg?1329716249"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"I've tried hard on this assignment but I am not sure I am even a little bit close to the solution. I need some help. Here my pastebin:\n[solution removed]","createdAt":"2012-02-17T10:00:36","id":"441742014","thread":"530967307","depth":0,"numReports":0,"likes":1,"isEdited":true,"message":"\u003cp>I've tried hard on this assignment but I am not sure I am even a little bit close to the solution. I need some help. Here my pastebin:\u003cbr>[solution removed]\u003c/p>","isSpam":false,"isHighlighted":false,"points":1},{"isFlagged":false,"forum":"learn-code-the-hard-way","parent":441742014,"author":{"username":"zedshaw","about":"","name":"zedshaw","url":"","isAnonymous":false,"rep":2.7099330000000004,"profileUrl":"http://disqus.com/zedshaw/","reputation":2.7099330000000004,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2011-12-22T16:18:31","id":"20449127","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/zedshaw.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/zedshaw.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/zedshaw.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"So, in the test, Lexicon is a class, but you've got a module.   Write a class Lexicon and it should work.  Let me know if you have to alter the test to make it work though.","createdAt":"2012-02-17T19:12:00","id":"442194938","thread":"530967307","depth":1,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>So, in the test, Lexicon is a class, but you've got a module.   Write a class Lexicon and it should work.  Let me know if you have to alter the test to make it work though.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"learn-code-the-hard-way","parent":442194938,"author":{"username":"twitter-102305965","about":"","name":"Richardson Dackam","url":"http://twitter.com/RichardsonDx","isAnonymous":false,"rep":1.2329599999999998,"profileUrl":"http://disqus.com/twitter-102305965/","reputation":1.2329599999999998,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2012-02-16T08:57:10","id":"22463953","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/twitter-102305965.jpg","cache":"//a.disquscdn.com/uploads/users/2246/3953/avatar32.jpg?1329716249"},"isCustom":true,"permalink":"http://disqus.com/api/users/avatars/twitter-102305965.jpg","cache":"//a.disquscdn.com/uploads/users/2246/3953/avatar92.jpg?1329716249","large":{"permalink":"http://disqus.com/api/users/avatars/twitter-102305965.jpg","cache":"//a.disquscdn.com/uploads/users/2246/3953/avatar92.jpg?1329716249"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"So, I create the class Lexicon and I start understanding this assignment a little bit more than before. I am still not sure about how to tell the program to look up onto the Lexicon file and make the association. How can I tell the program to check \"north\" and return the array that it is from (direction)? I tried to look it up in ruby rdoc but I didn't find anything I could use. It however helped me to better understand the Struct method.\nIf struct help to pair the words together, how do I make the association between the word and its token to begin with?\nThis is what I've been able to do so far: http://pastebin.com/dz1w9RRV","createdAt":"2012-02-20T05:37:28","id":"443840073","thread":"530967307","depth":2,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>So, I create the class Lexicon and I start understanding this assignment a little bit more than before. I am still not sure about how to tell the program to look up onto the Lexicon file and make the association. How can I tell the program to check \"north\" and return the array that it is from (direction)? I tried to look it up in ruby rdoc but I didn't find anything I could use. It however helped me to better understand the Struct method.\u003cbr>If struct help to pair the words together, how do I make the association between the word and its token to begin with?\u003cbr>This is what I've been able to do so far: \u003ca href=\"http://pastebin.com/dz1w9RRV\" rel=\"nofollow\">http://pastebin.com/dz1w9RRV\u003c/a>\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"learn-code-the-hard-way","parent":443840073,"author":{"username":"zedshaw","about":"","name":"zedshaw","url":"","isAnonymous":false,"rep":2.7099330000000004,"profileUrl":"http://disqus.com/zedshaw/","reputation":2.7099330000000004,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2011-12-22T16:18:31","id":"20449127","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/zedshaw.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/zedshaw.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/zedshaw.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Ok, keep plugging away at this, you're getting closer.  Here's some more tips:\n\n1. Take the scan method and put it on Lexicon, not Pair.  If you look at the test, that's how the test is saying it should be.\n2. Use a Hashmap to associate each word with it's type:  {'north' => 'direction', 'south' => 'direction'}  Then you just take each word you get, look it up in the Hashmap in Lexicon, and that's what it is.  If you get nil then it's an error word.\n\nThat should be a good start from here.","createdAt":"2012-02-21T00:27:09","id":"444401900","thread":"530967307","depth":3,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Ok, keep plugging away at this, you're getting closer.  Here's some more tips:\u003c/p>\u003cp>1. Take the scan method and put it on Lexicon, not Pair.  If you look at the test, that's how the test is saying it should be.\u003cbr>2. Use a Hashmap to associate each word with it's type:  {'north' =&gt; 'direction', 'south' =&gt; 'direction'}  Then you just take each word you get, look it up in the Hashmap in Lexicon, and that's what it is.  If you get nil then it's an error word.\u003c/p>\u003cp>That should be a good start from here.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"learn-code-the-hard-way","parent":null,"author":{"username":"google-8d0aacd5e5be303d2b09ec751f207b8c","about":"","name":"Bobby Matson","url":"","isAnonymous":false,"rep":1.232222,"profileUrl":"http://disqus.com/google-8d0aacd5e5be303d2b09ec751f207b8c/","reputation":1.232222,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2012-05-17T02:19:14","id":"26247111","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/google-8d0aacd5e5be303d2b09ec751f207b8c.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/google-8d0aacd5e5be303d2b09ec751f207b8c.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/google-8d0aacd5e5be303d2b09ec751f207b8c.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":1,"raw_message":"Thanks Zed, this was an amazing exercise! Got mine to 34 lines :) http://pastebin.com/3EJUT3qX","createdAt":"2012-05-17T02:19:17","id":"530828439","thread":"530967307","depth":0,"numReports":0,"likes":1,"isEdited":false,"message":"\u003cp>Thanks Zed, this was an amazing exercise! Got mine to 34 lines :) \u003ca href=\"http://pastebin.com/3EJUT3qX\" rel=\"nofollow\">http://pastebin.com/3EJUT3qX\u003c/a>\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"learn-code-the-hard-way","parent":null,"author":{"username":"BasarErdivanli","about":"","name":"BasarErdivanli","url":"","isAnonymous":false,"rep":1.237261,"profileUrl":"http://disqus.com/BasarErdivanli/","reputation":1.237261,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2012-03-17T20:46:55","id":"23699274","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/BasarErdivanli.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/BasarErdivanli.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/BasarErdivanli.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"I made all tests pass with the code below:\n\n[solution removed]\n\nBut I have a question since I cannot get sure whether my solution is correct enough or not:\n\ntest_numbers was my nightmare and I could only solve it by suggesting that if the string passed to the scan method is any real number (containing nothing except 0..9), it should pass and be called a number. So, if this is correct, why changing line 3 of convert_number method \"Integer(s)\" to \"s.to_i\" or \"s = Integer(s)\" ruin both test_numbers and test_errors?\n\nI read that in ruby, methods return the last statement. So \"Integer(s)\" should be equal to \"return Integer(s)\" or \"s = Integer(s)\" or \"s = Integer(s)\" + \"return s\".\n\nI know that Integer(\"1234a\") raises an exception but \"1234a\".to_i doesn't. But eventhough I leave \"Integer(s)\" in place and add a \"s.to_i\" line right below it, I cannot get rid of \"s.to_i\" in 7th line of scan method. That is what I don't understand.\n\nTo not ruin the tutorial for others, I would appreciate a link to a guide or a keyword. Besides your search&solve strategy really works great in learning programming.","createdAt":"2012-04-06T21:21:51","id":"489307845","thread":"530967307","depth":0,"numReports":0,"likes":0,"isEdited":true,"message":"\u003cp>I made all tests pass with the code below:\u003c/p>\u003cp>[solution removed]\u003c/p>\u003cp>But I have a question since I cannot get sure whether my solution is correct enough or not:\u003c/p>\u003cp>test_numbers was my nightmare and I could only solve it by suggesting that if the string passed to the scan method is any real number (containing nothing except 0..9), it should pass and be called a number. So, if this is correct, why changing line 3 of convert_number method \"Integer(s)\" to \"s.to_i\" or \"s = Integer(s)\" ruin both test_numbers and test_errors?\u003c/p>\u003cp>I read that in ruby, methods return the last statement. So \"Integer(s)\" should be equal to \"return Integer(s)\" or \"s = Integer(s)\" or \"s = Integer(s)\" + \"return s\".\u003c/p>\u003cp>I know that Integer(\"1234a\") raises an exception but \"1234a\".to_i doesn't. But eventhough I leave \"Integer(s)\" in place and add a \"s.to_i\" line right below it, I cannot get rid of \"s.to_i\" in 7th line of scan method. That is what I don't understand.\u003c/p>\u003cp>To not ruin the tutorial for others, I would appreciate a link to a guide or a keyword. Besides your search&amp;solve strategy really works great in learning programming.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0},{"isFlagged":false,"forum":"learn-code-the-hard-way","parent":489307845,"author":{"username":"zedshaw","about":"","name":"zedshaw","url":"","isAnonymous":false,"rep":2.7099330000000004,"profileUrl":"http://disqus.com/zedshaw/","reputation":2.7099330000000004,"location":"","isPrivate":false,"isPrimary":true,"joinedAt":"2011-12-22T16:18:31","id":"20449127","avatar":{"small":{"permalink":"http://disqus.com/api/users/avatars/zedshaw.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar32.png"},"isCustom":false,"permalink":"http://disqus.com/api/users/avatars/zedshaw.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar92.png","large":{"permalink":"http://disqus.com/api/users/avatars/zedshaw.jpg","cache":"//a.disquscdn.com/1405376578/images/noavatar92.png"}}},"media":[],"isDeleted":false,"isApproved":true,"dislikes":0,"raw_message":"Ultimately, you should go with whatever is simpler for the task.  The difference between to_i and Integer() is simply that you can tell if someone did not enter a number with Integer().  With to_i you get a 0 if they enter anything, so \"fasdfasdfadsf\".to_i will be 0 as well as \"0\".to_i.\n\nIf you use Integer though, just return it.  There's no need to do to_i after that.","createdAt":"2012-04-07T00:03:48","id":"489423276","thread":"530967307","depth":1,"numReports":0,"likes":0,"isEdited":false,"message":"\u003cp>Ultimately, you should go with whatever is simpler for the task.  The difference between to_i and Integer() is simply that you can tell if someone did not enter a number with Integer().  With to_i you get a 0 if they enter anything, so \"fasdfasdfadsf\".to_i will be 0 as well as \"0\".to_i.\u003c/p>\u003cp>If you use Integer though, just return it.  There's no need to do to_i after that.\u003c/p>","isSpam":false,"isHighlighted":false,"points":0}],"thread":{"feed":"https://learn-code-the-hard-way.disqus.com/exercise_48_advanced_user_input_learn_ruby_the_hard_way/latest.rss","uploadAdd":"//learn-code-the-hard-way.disqus.com/thread/exercise_48_advanced_user_input_learn_ruby_the_hard_way/async_media_upload/","identifiers":[],"dislikes":0,"likes":0,"message":"","id":"530967307","createdAt":"2012-01-08T03:51:37","category":"1211890","clean_title":"Exercise 48: Advanced User Input \u2014 Learn Ruby The Hard Way","userScore":0,"moderators":[20449127],"isDeleted":false,"hasStreaming":false,"uploadRemove":"//learn-code-the-hard-way.disqus.com/thread/exercise_48_advanced_user_input_learn_ruby_the_hard_way/async_media_remove/","isClosed":true,"link":"http://ruby.learncodethehardway.org/book/ex48.html","slug":"exercise_48_advanced_user_input_learn_ruby_the_hard_way","forum":"learn-code-the-hard-way","author":"20449127","posts":7,"userSubscription":false,"title":"Exercise 48: Advanced User Input \u2014 Learn Ruby The Hard Way","highlightedPost":null}},"order":"popular"}</script>
+
+    
+
+    <div id="fixed-content"></div>
+
+    <script src="lounge.load.js"></script>
+    
+
+
+<div id="layout" data-tracking-area="layout"><div class="alert">
+<a class="close" data-action="dismiss">×</a>
+
+<span>Comments for this thread are now closed.</span>
+
+</div>
+
+<div id="discovery-top" data-tracking-area="discovery-north" style="position: static; visibility: visible; display: block; width: 100%;">
+<div id="discovery-main-c145" class="discovery-main discovery-thumbnails style-variant-old doublethumbnails">
+<div id="discovery-note" class="discovery-note">
+
+<div class="alert">
+<button class="close" data-action="discovery-help-close" title="Close this box">×</button>
+Disqus helps you find new and interesting content, discussions and products. Some sponsors and ecommerce sites may pay us for these recommendations and links. 
+<a href="http://help.disqus.com/customer/portal/articles/666278-introducing-promoted-discovery-and-f-a-q-" target="_blank">Learn more</a>
+ or 
+<a href="https://www.surveymonkey.com/s/GHK872T" target="_blank">
+give us feedback</a>.
+
+</div>
+
+</div>
+
+<div class="discovery-options">
+<button class="discovery-help" data-action="discovery-help">
+What's this?
+</button>
+</div>
+
+
+
+<section id="col-promoted-c145" class="col-promoted discovery-col-0 ">
+<header class="discovery-col-header">
+
+
+
+
+<h2>Around The Web</h2>
+
+
+</header>
+<ul class="discovery-posts">
+
+<li class="discovery-post hasthumbnail post-0" id="discovery-link-promoted-97408" data-role="discovery-post">
+<a href="http://redirect.disqus.com/url?url=http%3A%2F%2Fwww.stack.com%2F2012%2F11%2F14%2Fkeys-to-build-muscle-fast%2F%3Fcampaign_id%3Ddisqus.stack.1%3A1X7LBs%3AmaqS6jFA8wQftTP3Rc6aEUUTAD0&imp=537p0532it5vdu&prev_imp=537p0vd6ho7nc&forum_id=1188756&forum=learn-code-the-hard-way&thread_id=530967307&major_version=midway&bin=embed%3Apromoted_discovery%3Athumbnail%3Adisplay%3Asmall_images_old&zone=promoted_discovery&advertisement_id=97408&brand=Stack&headline=Secrets%20of%20Building%20Muscle%3A%20It%27s%20Not%20Just%20About%20Exercise" target="_blank" rel="nofollow norewrite" class="publisher-anchor-color">
+
+<div class="thumbnail" style="background-image: url(//thumbs.disquscdn.com/N1Y-rS97MM2BMNgvn2FHtKJTPGQ=/340x240/smart/disqus-tempest.s3.amazonaws.com%2Fthumbnails%2Foriginal%2F97408.jpeg);">
+</div>
+
+
+<header class="discovery-post-header">
+<h3 title="Secrets of Building Muscle: It&#39;s Not Just About Exercise">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="4">
+Secrets of Building Muscle: It's Not Just About Exercise
+</span>
+
+
+
+
+
+
+<span class="inline-meta">
+Stack
+</span>
+
+
+
+</h3>
+
+
+</header>
+
+
+</a>
+
+</li>
+
+<li class="discovery-post hasthumbnail post-1" id="discovery-link-promoted-131417" data-role="discovery-post">
+<a href="http://redirect.disqus.com/url?url=http%3A%2F%2Fwww.yourjewishnews.com%2F2014%2F03%2Fw9002.html%3A1X7LBs%3AgTW0_UOA14JbASQJYPWtx68RZ8Y&imp=537p0532it5vdu&prev_imp=537p0vd6ho7nc&forum_id=1188756&forum=learn-code-the-hard-way&thread_id=530967307&major_version=midway&bin=embed%3Apromoted_discovery%3Athumbnail%3Adisplay%3Asmall_images_old&zone=promoted_discovery&advertisement_id=131417&brand=YJNews&headline=Man%20catches%20his%20wife%20cheating%20days%20after%20their%20wedding" target="_blank" rel="nofollow norewrite" class="publisher-anchor-color">
+
+<div class="thumbnail" style="background-image: url(//tempest.disquscdn.com/thumbnails/original_240x340/131417.jpeg);">
+</div>
+
+
+<header class="discovery-post-header">
+<h3 title="Man catches his wife cheating days after their wedding">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="4">
+Man catches his wife cheating days after their wedding
+</span>
+
+
+
+
+
+
+<span class="inline-meta">
+YJNews
+</span>
+
+
+
+</h3>
+
+
+</header>
+
+
+</a>
+
+</li>
+
+<li class="discovery-post hasthumbnail post-2" id="discovery-link-promoted-135907" data-role="discovery-post">
+<a href="http://redirect.disqus.com/url?url=http%3A%2F%2Fafterpartychat.com%2Fmr-t%2F%3A1X7LBs%3Aglz11OaDt3vc-5c_gjDhxfTKcgM&imp=537p0532it5vdu&prev_imp=537p0vd6ho7nc&forum_id=1188756&forum=learn-code-the-hard-way&thread_id=530967307&major_version=midway&bin=embed%3Apromoted_discovery%3Athumbnail%3Adisplay%3Asmall_images_old&zone=promoted_discovery&advertisement_id=135907&brand=After%20Party%20Chat&headline=Father%20T%20or%20Mr.%20T%3F" target="_blank" rel="nofollow norewrite" class="publisher-anchor-color">
+
+<div class="thumbnail" style="background-image: url(//tempest.disquscdn.com/thumbnails/scrape_240x340/135907.jpeg);">
+</div>
+
+
+<header class="discovery-post-header">
+<h3 title="Father T or Mr. T?">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="4">
+Father T or Mr. T?
+</span>
+
+
+
+
+
+
+<span class="inline-meta">
+After Party Chat
+</span>
+
+
+
+</h3>
+
+
+</header>
+
+
+</a>
+
+</li>
+
+<li class="discovery-post hasthumbnail post-3" id="discovery-link-promoted-111177" data-role="discovery-post">
+<a href="http://redirect.disqus.com/url?url=http%3A%2F%2Ftravel.amerikanki.com%2Fmost-beautiful-places-in-the-world%2F%3A1X7LBs%3ATaiMsfGLRUXw1Tv7E8iX2qtS3DA&imp=537p0532it5vdu&prev_imp=537p0vd6ho7nc&forum_id=1188756&forum=learn-code-the-hard-way&thread_id=530967307&major_version=midway&bin=embed%3Apromoted_discovery%3Athumbnail%3Adisplay%3Asmall_images_old&zone=promoted_discovery&advertisement_id=111177&brand=Amerikanki&headline=10%20Most%20Beautiful%20Places%20in%20the%20World" target="_blank" rel="nofollow norewrite" class="publisher-anchor-color">
+
+<div class="thumbnail" style="background-image: url(//tempest.disquscdn.com/thumbnails/original_240x340/111177.jpeg);">
+</div>
+
+
+<header class="discovery-post-header">
+<h3 title="10 Most Beautiful Places in the World">
+<span data-role="discovery-thread-title" class="title line-truncate" data-line-truncate="4">
+10 Most Beautiful Places in the World
+</span>
+
+
+
+
+
+
+<span class="inline-meta">
+Amerikanki
+</span>
+
+
+
+</h3>
+
+
+</header>
+
+
+</a>
+
+</li>
+
+</ul>
+</section>
+
+
+</div>
+</div>
+
+<div id="onboard" data-tracking-area="onboard"></div>
+
+<div id="highlighted-post" data-tracking-area="highlighted" class="highlighted-post" style="display: none;"></div>
+
+<header id="main-nav" data-tracking-area="main-nav">
+
+<nav class="nav nav-primary">
+<ul>
+<li class="tab-conversation active">
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-role="post-count" class="publisher-nav-color" data-nav="conversation">
+
+<span class="comment-count">
+
+7 comments
+
+</span>
+
+
+<span class="comment-count-placeholder">
+Comments
+</span>
+</a>
+</li>
+<li class="tab-community">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" class="publisher-nav-color" data-nav="community" id="community-tab">
+
+
+<span class="community-name">
+
+<strong>Learn Code The Hard way</strong>
+
+</span>
+
+
+<strong class="community-name-placeholder">Community</strong>
+</a>
+</li>
+<li class="dropdown user-menu" data-role="logout">
+
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" class="dropdown-toggle" data-toggle="dropdown">
+<span class="dropdown-toggle-wrapper">
+
+
+<span>
+Login
+</span>
+
+
+</span> <span class="caret"></span>
+</a>
+
+<ul class="dropdown-menu">
+
+
+
+
+<li>
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="auth:disqus">Disqus</a>
+</li>
+<li>
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="auth:facebook">Facebook</a>
+</li>
+<li>
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="auth:twitter">Twitter</a>
+</li>
+<li>
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="auth:google">Google</a>
+</li>
+
+
+
+
+
+
+
+</ul>
+</li>
+<li class="notification-menu" data-role="notification-menu">
+
+
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" class="notification-container" data-action="auth:disqus">
+<span class="notification-icon icon-disqus"></span>
+
+
+</a></li>
+</ul>
+</nav>
+
+</header>
+
+
+
+
+<section id="conversation" data-role="main" data-tracking-area="main">
+
+<div class="nav nav-secondary" data-tracking-area="secondary-nav">
+<ul>
+
+<li data-role="post-sort" class="dropdown sorting">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" class="dropdown-toggle" data-nav="conversation" data-toggle="dropdown">
+Sort by Best
+
+
+<span class="caret"></span>
+</a>
+<ul class="dropdown-menu">
+<li class="selected">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="sort" data-sort="popular">Best</a>
+</li>
+
+<li>
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="sort" data-sort="desc">Newest</a>
+</li>
+
+<li>
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="sort" data-sort="asc">Oldest</a>
+</li>
+</ul>
+</li>
+
+
+<li id="thread-votes" class="favorite pull-right">
+<!-- rendered dynamically -->
+<div class="thread-likes" data-role="vote-button">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="upvote" title="Favorite this discussion">
+<span class="label">Favorite</span>
+<span class="icon-star"></span>
+<span class="icon-check"></span>
+</a>
+</div></li>
+
+<li id="thread-share-menu" class="dropdown share-menu">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" class="dropdown-toggle" data-toggle="dropdown" title="Share">
+<span class="label">Share</span> <span class="icon-export"></span>
+</a>
+<ul class="share-menu dropdown-menu pull-right">
+<li class="share">Share this discussion on
+<ul>
+<li class="twitter">
+<a data-action="share:twitter" href="http://ruby.learncodethehardway.org/book/ex48.html#">Twitter</a>
+</li>
+<li class="facebook">
+<a data-action="share:facebook" href="http://ruby.learncodethehardway.org/book/ex48.html#">Facebook</a>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+<div id="posts">
+
+<div id="form"></div>
+
+<button class="alert realtime" style="display: none;" data-role="realtime-notification">
+
+</button>
+
+
+<div id="no-posts" style="display: none;">Be the first to comment.</div>
+
+<ul id="post-list" class="post-list"><li class="post" id="post-441742014">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/twitter-102305965/" class="user" data-action="profile" data-user="22463953">
+<img data-role="user-avatar" data-user="22463953" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="profile" data-user="22463953" data-role="username">Richardson Dackam</a></span>
+
+
+
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-441742014" data-role="relative-time" class="time-ago" title="Friday, February 17 2012 3:30 PM">
+2 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>I've tried hard on this assignment but I am not sure I am even a little bit close to the solution. I need some help. Here my pastebin:<br>[solution removed]</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" class="vote-up  count-1" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-441742014">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:441742014">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://ruby.learncodethehardway.org/book/ex48.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-442194938">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/zedshaw/" class="user" data-action="profile" data-user="20449127">
+<img data-role="user-avatar" data-user="20449127" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="profile" data-user="20449127" data-role="username">zedshaw</a></span>
+
+
+<span class="badge moderator">Mod</span>
+
+
+
+
+
+<span><a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-441742014" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> Richardson Dackam</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-442194938" data-role="relative-time" class="time-ago" title="Saturday, February 18 2012 12:42 AM">
+2 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>So, in the test, Lexicon is a class, but you've got a module.   Write a class Lexicon and it should work.  Let me know if you have to alter the test to make it work though.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-442194938">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:442194938">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://ruby.learncodethehardway.org/book/ex48.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-443840073">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/twitter-102305965/" class="user" data-action="profile" data-user="22463953">
+<img data-role="user-avatar" data-user="22463953" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="profile" data-user="22463953" data-role="username">Richardson Dackam</a></span>
+
+
+
+
+
+
+<span><a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-442194938" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> zedshaw</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-443840073" data-role="relative-time" class="time-ago" title="Monday, February 20 2012 11:07 AM">
+2 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>So, I create the class Lexicon and I start understanding this assignment a little bit more than before. I am still not sure about how to tell the program to look up onto the Lexicon file and make the association. How can I tell the program to check "north" and return the array that it is from (direction)? I tried to look it up in ruby rdoc but I didn't find anything I could use. It however helped me to better understand the Struct method.<br>If struct help to pair the words together, how do I make the association between the word and its token to begin with?<br>This is what I've been able to do so far: <a href="http://pastebin.com/dz1w9RRV" rel="nofollow">http://pastebin.com/dz1w9RRV</a></p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-443840073">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:443840073">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://ruby.learncodethehardway.org/book/ex48.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-444401900">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/zedshaw/" class="user" data-action="profile" data-user="20449127">
+<img data-role="user-avatar" data-user="20449127" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="profile" data-user="20449127" data-role="username">zedshaw</a></span>
+
+
+<span class="badge moderator">Mod</span>
+
+
+
+
+
+<span><a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-443840073" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> Richardson Dackam</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-444401900" data-role="relative-time" class="time-ago" title="Tuesday, February 21 2012 5:57 AM">
+2 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Ok, keep plugging away at this, you're getting closer.  Here's some more tips:</p><p>1. Take the scan method and put it on Lexicon, not Pair.  If you look at the test, that's how the test is saying it should be.<br>2. Use a Hashmap to associate each word with it's type:  {'north' =&gt; 'direction', 'south' =&gt; 'direction'}  Then you just take each word you get, look it up in the Hashmap in Lexicon, and that's what it is.  If you get nil then it's an error word.</p><p>That should be a good start from here.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-444401900">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:444401900">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://ruby.learncodethehardway.org/book/ex48.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li></ul>
+
+
+</li></ul>
+
+
+</li></ul>
+
+
+</li><li class="post" id="post-530828439">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/google-8d0aacd5e5be303d2b09ec751f207b8c/" class="user" data-action="profile" data-user="26247111">
+<img data-role="user-avatar" data-user="26247111" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="profile" data-user="26247111" data-role="username">Bobby Matson</a></span>
+
+
+
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-530828439" data-role="relative-time" class="time-ago" title="Thursday, May 17 2012 7:49 AM">
+2 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Thanks Zed, this was an amazing exercise! Got mine to 34 lines :) <a href="http://pastebin.com/3EJUT3qX" rel="nofollow">http://pastebin.com/3EJUT3qX</a></p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" class="vote-up  count-1" data-action="upvote" title="">
+<span class="updatable count" data-role="likes">1</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-1" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-530828439">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:530828439">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://ruby.learncodethehardway.org/book/ex48.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li><li class="post" id="post-489307845">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/BasarErdivanli/" class="user" data-action="profile" data-user="23699274">
+<img data-role="user-avatar" data-user="23699274" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="profile" data-user="23699274" data-role="username">BasarErdivanli</a></span>
+
+
+
+
+
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-489307845" data-role="relative-time" class="time-ago" title="Saturday, April 7 2012 2:51 AM">
+2 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>I made all tests pass with the code below:</p><p>[solution removed]</p><p>But I have a question since I cannot get sure whether my solution is correct enough or not:</p><p>test_numbers was my nightmare and I could only solve it by suggesting that if the string passed to the scan method is any real number (containing nothing except 0..9), it should pass and be called a number. So, if this is correct, why changing line 3 of convert_number method "Integer(s)" to "s.to_i" or "s = Integer(s)" ruin both test_numbers and test_errors?</p><p>I read that in ruby, methods return the last statement. So "Integer(s)" should be equal to "return Integer(s)" or "s = Integer(s)" or "s = Integer(s)" + "return s".</p><p>I know that Integer("1234a") raises an exception but "1234a".to_i doesn't. But eventhough I leave "Integer(s)" in place and add a "s.to_i" line right below it, I cannot get rid of "s.to_i" in 7th line of scan method. That is what I don't understand.</p><p>To not ruin the tutorial for others, I would appreciate a link to a guide or a keyword. Besides your search&amp;solve strategy really works great in learning programming.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-489307845">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:489307845">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://ruby.learncodethehardway.org/book/ex48.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"><li class="post" id="post-489423276">
+<div role="alert"></div>
+
+<div data-role="post-content" class="post-content">
+
+<ul class="post-menu dropdown" data-role="menu">
+<li class="collapse">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="collapse" title="Collapse"><span>−</span></a>
+</li>
+<li class="expand">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="collapse" title="Expand"><span>+</span></a>
+</li>
+
+
+<li class="" role="menu">
+
+
+<a class="dropdown-toggle" href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="flag" data-role="flag" title="Flag as inappropriate">
+<i aria-hidden="true" class="icon icon-flag"></i>
+</a>
+
+
+</li>
+
+</ul>
+
+<div class="indicator"></div>
+
+
+
+
+<div class="avatar hovercard">
+<a href="http://disqus.com/zedshaw/" class="user" data-action="profile" data-user="20449127">
+<img data-role="user-avatar" data-user="20449127" src="noavatar92.png" alt="Avatar">
+</a>
+</div>
+
+
+<div class="post-body">
+<header>
+<span class="post-byline">
+
+<span class="author publisher-anchor-color"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="profile" data-user="20449127" data-role="username">zedshaw</a></span>
+
+
+<span class="badge moderator">Mod</span>
+
+
+
+
+
+<span><a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-489307845" class="parent-link" data-role="parent-link"><i aria-hidden="true" class="icon-forward" title="in reply to"></i> BasarErdivanli</a></span>
+
+</span>
+
+<span class="post-meta">
+<span class="bullet time-ago-bullet" aria-hidden="true">•</span>
+
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-489423276" data-role="relative-time" class="time-ago" title="Saturday, April 7 2012 5:33 AM">
+2 years ago
+</a>
+
+</span>
+
+
+</header>
+
+
+<div class="post-body-inner">
+
+<div class="post-message-container" data-role="message-container">
+
+<div class="publisher-anchor-color" data-role="message-content">
+<div class="post-message " data-role="message" dir="auto">
+
+<p>Ultimately, you should go with whatever is simpler for the task.  The difference between to_i and Integer() is simply that you can tell if someone did not enter a number with Integer().  With to_i you get a 0 if they enter anything, so "fasdfasdfadsf".to_i will be 0 as well as "0".to_i.</p><p>If you use Integer though, just return it.  There's no need to do to_i after that.</p>
+
+</div>
+
+<span class="post-media"><ul data-role="post-media-list"></ul></span>
+</div>
+</div>
+<a class="see-more hidden" title="see more" data-action="see-more">see more</a>
+</div>
+
+<footer>
+
+<menu>
+
+<li class="voting" data-role="voting">
+
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" class="vote-up  count-0" data-action="upvote" title="Vote up">
+<span class="updatable count" data-role="likes">0</span>
+<span class="control"><i aria-hidden="true" class="icon icon-arrow-2"></i></span>
+</a>
+<span role="button" class="vote-down  count-0" title="Vote down">
+
+<span class="control"><i aria-hidden="true" class="icon icon-arrow"></i></span>
+
+<span class="tooltip">You must sign in to down-vote this post.</span>
+
+</span>
+
+</li>
+<li class="bullet" aria-hidden="true">•</li>
+
+
+
+
+
+
+
+
+<li class="share">
+<a class="toggle"><i class="icon icon-mobile icon-share"></i><span class="text">Share ›</span></a>
+<ul>
+<li class="twitter"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="share:twitter">Twitter</a></li>
+<li class="facebook"><a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="share:facebook">Facebook</a></li>
+<li class="link"><a href="http://ruby.learncodethehardway.org/book/ex48.html#comment-489423276">Link</a></li>
+</ul>
+</li>
+
+
+
+<li class="realtime" data-role="realtime-notification:489423276">
+<span style="display:none;" class="realtime-replies"></span>
+<a style="display:none;" href="http://ruby.learncodethehardway.org/book/ex48.html#" class="btn btn-small"></a>
+
+</li>
+
+
+
+</menu>
+
+</footer>
+</div>
+
+
+<div data-role="blacklist-form"></div>
+<div class="reply-form-container" data-role="reply-form"></div>
+</div>
+
+
+<ul data-role="children" class="children"></ul>
+
+
+</li></ul>
+
+
+</li></ul>
+
+<div class="load-more" data-role="more" style="display: none;">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="more-posts" class="btn">Load more comments</a>
+</div>
+</div>
+
+</section>
+
+<section id="community" data-tracking-area="main" style="display:none" data-role="main" data-outbound-link="embed:community" class="loading">
+
+</section>
+
+<section id="dashboard" style="display:none" data-role="main" data-tracking-area="main">
+
+
+<p style="line-height: 1.4">Nothing for you here ... yet. But as you comment with Disqus and follow
+other Disqus users, you will start to receive notifications here, as well as a personalized
+feed of activity by you and the people you follow. So get out there and participate in
+some discussions!</p>
+</section>
+
+<section id="profile" style="display:none" data-role="main" data-tracking-area="main">
+</section>
+
+<div id="discovery" data-tracking-area="discovery-south"></div>
+
+<div id="footer" data-tracking-area="footer">
+<ul>
+<li class="logo"><a href="http://disqus.com/" title="Powered by Disqus">Powered by Disqus</a></li>
+<li id="thread-subscribe-button" class="email"> 
+<div class="default">
+<a href="http://ruby.learncodethehardway.org/book/ex48.html#" data-action="subscribe" title="Subscribe and get email updates from this discussion"><i aria-hidden="true" class="icon-mail"></i><span class="clip">Subscribe</span> <i aria-hidden="true" class="icon-checkmark"></i></a>
+</div>
+<div class="form">
+<div class="input-wrapper"><input id="thread-subscribe-email" type="email" placeholder="yourname@email.com"></div>
+</div>
+</li>
+<li class="install">
+<a href="https://disqus.com/websites/?utm_source=learn-code-the-hard-way&utm_medium=Disqus-Footer" target="_blank">
+<i aria-hidden="true" class="icon-disqus"></i>
+<span class="clip">Add Disqus to your site</span>
+</a>
+</li>
+</ul>
+</div>
+</div></body></html>

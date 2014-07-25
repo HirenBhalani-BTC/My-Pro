@@ -1,0 +1,3988 @@
+<!DOCTYPE html>
+<!-- saved from url=(0102)http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <title>algorithm - Find all combinations of coins when given some dollar value - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico?v=038622610830">
+    <link rel="apple-touch-icon image_src" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png?v=fd7230a85918">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:domain" content="stackoverflow.com">
+    <meta name="og:type" content="website">
+    <meta name="og:image" content="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon@2.png?v=fde65a5a78c6">
+    <meta name="og:title" content="Find all combinations of coins when given some dollar value">
+    <meta name="og:description" content="I found a piece of code that I was writing for interview prep few months ago.
+
+According to the comment I had, it was trying to solve this problem:
+
+Given some dollar value in cents (e.g. 200 = 2 ">
+    <meta name="og:url" content="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value">
+    <link rel="canonical" href="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/algorithm - Find all combinations of coins when given some dollar value - Stack Overflow.html">
+
+    
+    
+    <script async="" src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/quant.js"></script><script async="" src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/beacon.js"></script><script async="" src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/analytics.js"></script><script src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/jquery.min.js"></script>
+    <script src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/stub.en.js"></script>
+    <link rel="stylesheet" type="text/css" href="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/all.css">
+    
+    <link rel="alternate" type="application/atom+xml" title="Feed for question &#39;Find all combinations of coins when given some dollar value&#39;" href="http://stackoverflow.com/feeds/question/1106929">
+    <script>
+        
+        StackExchange.ready(function () {
+            StackExchange.using("postValidation", function () {
+                StackExchange.postValidation.initOnBlurAndSubmit($('#post-form'), 2, 'answer');
+            });
+
+            
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:11,shownCommentCount:5,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:1106929});
+
+            styleCode();
+
+                StackExchange.realtime.subscribeToQuestion('1', '1106929');
+            
+                    });
+    </script>
+
+
+    <script>
+        StackExchange.init({"locale":"en","stackAuthUrl":"https://stackauth.com","serverTime":1406224642,"networkMetaHostname":"meta.stackexchange.com","styleCode":true,"enableUserHovercards":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers","isNoticesTabEnabled":true,"recaptchaPublicKey":"6LdchgIAAAAAAJwGpIzRQSOFaO0pU6s44Xt8aTwc","recaptchaAudioLang":"en","enableNewTagCreationWarning":true,"nonAsciiTags":true,"enableSocialMediaInSharePopup":true},"user":{"fkey":"0cf87f5d7fea645c414c72faf63f1c09","isAnonymous":true}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.en.js":"59d3d3aeab07","js/moderator.en.js":"3604ea6c59fb","js/full-anon.en.js":"773790dbfbf7","js/full.en.js":"39076172f091","js/wmd.en.js":"8574f2c7b849","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/third-party/jquery.autocomplete.min.en.js":"","js/mobile.en.js":"361730217e02","js/help.en.js":"ce2977cf4348","js/tageditor.en.js":"6745d44a9770","js/tageditornew.en.js":"1ffaa9c2c32f","js/inline-tag-editing.en.js":"ea666f1bc7d0","js/revisions.en.js":"507cd4269137","js/review.en.js":"9b9912d5dbe6","js/tagsuggestions.en.js":"bb4721d888d2","js/post-validation.en.js":"afe0e5bb46b1","js/explore-qlist.en.js":"8b8b631bd679","js/events.en.js":"05e2c7bb5cd4"});
+        StackExchange.using("gps", function() {
+             StackExchange.gps.init(true);
+        });
+    </script>
+    
+        <script>
+            StackExchange.ready(function () {
+                $('#nav-tour').click(function () {
+                    StackExchange.using("gps", function() {
+                        StackExchange.gps.track("aboutpage.click", { aboutclick_location: "headermain" }, true);
+                    });
+                });
+            });
+        </script>
+<script async="" src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/full-anon.en.js"></script><script async="" src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/post-validation.en.js"></script><link href="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/company.min.css" type="text/css" rel="stylesheet"><link href="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/sidebar.min.css" type="text/css" rel="stylesheet"></head>
+<body class="question-page new-topbar" itemscope="" itemtype="http://schema.org/QAPage">
+    <noscript>&lt;div id="noscript-padding"&gt;&lt;/div&gt;</noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+<div class="topbar">
+    <div class="topbar-wrapper">
+        
+        <div class="js-topbar-dialog-corral">
+
+<div class="topbar-dialog siteSwitcher-dialog dno">
+    <div class="header">
+        <h3><a href="http://stackoverflow.com/">current community</a></h3>
+    </div>
+    <div class="modal-content current-site-container">
+        <ul class="current-site">
+                <li>
+                        <div class="related-links">
+            <a href="http://chat.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:6 })">chat</a>
+                    <a href="http://blog.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:7 })">blog</a>
+            </div>
+
+
+
+
+    <a href="http://stackoverflow.com/" class="current-site-link site-link js-gps-track" data-id="1" data-gps-track="
+        site_switcher.click({ item_type:3 })">
+        <div class="site-icon favicon favicon-stackoverflow" title="Stack Overflow"></div>
+        Stack Overflow
+    </a>
+
+                </li>
+                <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    
+
+
+
+    <a href="http://meta.stackoverflow.com/" class="site-link js-gps-track" data-id="552" data-gps-track="
+            site.switch({ target_site:552, item_type:3 }),
+        site_switcher.click({ item_type:4 })">
+        <div class="site-icon favicon favicon-stackoverflowmeta" title="Meta Stack Overflow"></div>
+        Meta Stack Overflow
+    </a>
+
+                </li>
+                            <li class="related-site">
+                        <div class="L-shaped-icon-container">
+        <span class="L-shaped-icon"></span>
+    </div>
+
+                    <a class="site-link" href="http://careers.stackoverflow.com/" data-gps-track="site_switcher.click({ item_type:9 })">
+                        <div class="site-icon favicon favicon-careers" title="Stack Overflow Careers"></div>
+                        Careers 2.0
+                    </a>
+                </li>
+        </ul>
+    </div>
+    
+    <div class="header" id="your-communities-header">
+        <h3>
+your communities        </h3>
+            
+    </div>
+    <div class="modal-content" id="your-communities-section">
+            
+            <div class="call-to-login">
+                        <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f1106929%2ffind-all-combinations-of-coins-when-given-some-dollar-value" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:10 })">Sign up</a>
+                    or
+                    <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f1106929%2ffind-all-combinations-of-coins-when-given-some-dollar-value" class="js-gps-track" data-gps-track="site_switcher.click({ item_type:11 })">log in</a>
+
+                    to customize your list.
+            </div>
+    </div>
+    
+    <div class="header">
+        <h3><a href="http://stackexchange.com/sites">more stack exchange communities</a></h3>
+    </div>
+    <div class="modal-content">
+            <div class="child-content"></div>
+    </div>
+</div>
+        </div>
+
+        <div class="network-items">
+            
+            <a href="http://stackexchange.com/" class="topbar-icon icon-site-switcher yes-hover js-site-switcher-button js-gps-track" data-gps-track="site_switcher.show" title="A list of all 129 Stack Exchange sites">
+                <span class="hidden-text">Stack Exchange</span>
+            </a>
+            
+        </div>
+
+        <div class="topbar-links">
+            
+                <div class="links-container">
+                    <span class="topbar-menu-links">
+                            <a href="https://stackoverflow.com/users/signup?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f1106929%2ffind-all-combinations-of-coins-when-given-some-dollar-value" class="login-link">sign up</a>
+                            <a href="https://stackoverflow.com/users/login?returnurl=http%3a%2f%2fstackoverflow.com%2fquestions%2f1106929%2ffind-all-combinations-of-coins-when-given-some-dollar-value" class="login-link">log in</a>
+                            <a href="http://stackoverflow.com/tour">tour</a>
+
+                            <a href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#" class="icon-help js-help-button" title="Help Center and other resources">
+        help
+        <span class="triangle"></span>
+    </a>
+    <div class="topbar-dialog help-dialog js-help-dialog dno">
+        <div class="modal-content">
+            <ul>
+                                    <li>
+                        <a href="http://stackoverflow.com/tour" class="js-gps-track" data-gps-track="help_popup.click({ item_type:1 })">
+                            Tour
+                            <span class="item-summary">
+                                Start here for a quick overview of the site
+                            </span>
+                        </a>
+                    </li>
+                <li>
+                    <a href="http://stackoverflow.com/help" class="js-gps-track" data-gps-track="help_popup.click({ item_type:4 })">
+                        Help Center
+                        <span class="item-summary">
+                            Detailed answers to any questions you might have
+                        </span>
+                    </a>
+                </li>
+                    <li>
+                        <a href="http://meta.stackoverflow.com/" class="js-gps-track" data-gps-track="help_popup.click({ item_type:2 })">
+                            Meta
+                            <span class="item-summary">
+                                Discuss the workings and policies of this site
+                            </span>
+                        </a>
+                    </li>
+            </ul>
+        </div>
+    </div>
+
+                            <a href="http://careers.stackoverflow.com/">careers 2.0</a>
+                    </span>
+                </div>
+
+			<div class="search-container">
+                <form id="search" action="http://stackoverflow.com/search" method="get" autocomplete="off">
+                    <input name="q" type="text" placeholder="search" value="" tabindex="1" autocomplete="off" maxlength="240">
+                </form>
+			</div>
+            	
+        </div>      
+    </div> 
+</div>
+<script>
+    StackExchange.ready(function () { StackExchange.topbar.init(); });
+</script>
+    <div class="container">
+        <div id="header" class="headeranon">
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">
+                    Stack Overflow
+                </a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs mainnavsanon">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/help/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+
+
+
+        <div id="content">
+            
+
+<div itemscope="" itemtype="http://schema.org/Question">
+	<link itemprop="image" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+			<!--googleoff: all-->
+
+<div id="herobox-mini">
+    <div id="hero-content">
+        <span id="controls">
+            <a href="http://stackoverflow.com/tour" id="tell-me-more" class="button">Take the 2-minute tour</a>
+            <span id="close"><a title="click to dismiss">×</a></span>
+        </span>
+        <div id="blurb">
+            Stack Overflow is a question and answer site for professional and enthusiast programmers. It's 100% free, no registration required.
+        </div>        
+    </div>
+    <script>
+        $('#tell-me-more').click(function () {
+            var clickSource = $("body").attr("class") + '-mini';
+            if ($("body").hasClass("questions-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("question-page")) {
+                clickSource = 'questionpagemini';
+            } else if ($("body").hasClass("home-page")) {
+                clickSource = 'homepagemini';
+            }
+
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("aboutpage.click", { aboutclick_location: clickSource } , true);
+            });
+        });
+        $('#herobox-mini #close').click(function () {
+            StackExchange.using("gps", function () {
+                StackExchange.gps.track("hero.action", { hero_action_type: "close" }, true);
+            });
+            $.cookie("hero", "none", { path: "/" });
+            var $hero = $("#herobox-mini");
+            $hero.slideUp('fast', function () { $hero.remove(); });
+            return false;
+        });
+    </script>
+</div>
+			<!--googleon: all-->
+			<div id="question-header">
+			<h1 itemprop="name"><a href="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/algorithm - Find all combinations of coins when given some dollar value - Stack Overflow.html" class="question-hyperlink">Find all combinations of coins when given some dollar value</a></h1>
+		</div>
+			<div id="mainbar">
+
+			
+
+<div class="question" data-questionid="1106929" id="question">
+
+    <div class="everyonelovesstackoverflow" id="careers1"><a href="http://careers.stackoverflow.com/" rel="nofollow" target="_blank"><img src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/english-728.png"></a></div>    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="1106929">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">43</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful">down vote</a>
+    
+    <a class="star-off" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b>58</b></div>   
+
+</div>
+
+            </td>
+            
+<td class="postcell">
+<div>
+    <div class="post-text" itemprop="text">
+
+        <p>I found a piece of code that I was writing for interview prep few months ago.</p>
+
+<p>According to the comment I had, it was trying to solve this problem:</p>
+
+<p><strong>Given some dollar value in cents (e.g. 200 = 2 dollars, 1000 = 10 dollars),
+find all the combinations of coins that make up the dollar value.
+There are only penny, nickel, dime, and quarter. (quarter = 25 cents, dime = 10 cents, nickel = 5 cents, penny = 1 cent)</strong></p>
+
+<p>For example, if 100 was given, the answer should be...<br>
+4 quarter(s) 0 dime(s) 0 nickel(s) 0 pennies<br>
+3 quarter(s) 1 dime(s) 0 nickel(s) 15 pennies<br>
+etc.</p>
+
+<p>This can be solved in both iterative and recursive ways, I believe. My recursive solution is quite buggy, and I was wondering how other people would solve this problem. The difficult part of this problem was making it as efficient as possible.</p>
+
+<p><strong>UPDATE</strong><br>
+Making this thread into a community wiki, because apparently, we have gathered many different implementations :)</p>
+
+    </div>
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/algorithm" class="post-tag js-gps-track" title="show questions tagged &#39;algorithm&#39;" rel="tag">algorithm</a> <a href="http://stackoverflow.com/questions/tagged/project-euler" class="post-tag js-gps-track" title="show questions tagged &#39;project-euler&#39;" rel="tag">project-euler</a> <a href="http://stackoverflow.com/questions/tagged/puzzle" class="post-tag js-gps-track" title="show questions tagged &#39;puzzle&#39;" rel="tag">puzzle</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/q/1106929" title="short permalink to this question" class="short-link" id="link-post-1106929">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1106929/edit" class="suggest-edit-post" title="">improve this question</a></div>        
+    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/1106929/revisions" title="show all edits to this post">edited <span title="2011-09-17 17:31:45Z" class="relativetime">Sep 17 '11 at 17:31</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+    <td class="post-signature">
+        <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Jul 16 &#39;09 at 19:02. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-1106929" href="http://stackoverflow.com/posts/1106929/revisions" title="show revision history for this post">
+        6 revs, 3 users 80%<br></a><a href="http://stackoverflow.com/users/191083">codingbear</a>
+
+        
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>
+        </tr>
+                
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1106929" class="comments " data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="6" data-addlink-html="add comment" data-addlink-disabled="true">
+
+
+    <tr id="comment-921908" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="hot">17</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I'm not an USA citizen, so... can you say to use what is a quarter, a dime, a nickel and a penny?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/69178/akappa" title="5322 reputation" class="comment-user">akappa</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment921908_1106929"><span title="2009-07-09 23:27:04Z" class="relativetime-clean">Jul 9 '09 at 23:27</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-921918" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="warm">5</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@akappa: penny = 1 cent; nickel = 5 cents; dime = 10 cents; quarter = 25 cents :)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/191083/codingbear" title="2797 reputation" class="comment-user owner">codingbear</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment921918_1106929"><span title="2009-07-09 23:29:42Z" class="relativetime-clean">Jul 9 '09 at 23:29</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-921936" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">2</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Can we turn this into a code golf please? This would be <i>VERY</i> insteresting :)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/36457/john-t" title="14057 reputation" class="comment-user">John T</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment921936_1106929"><span title="2009-07-09 23:34:39Z" class="relativetime-clean">Jul 9 '09 at 23:34</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-922004" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@blee code golf refers to solving a problem in the least amount of characters possible, with the programming language of your choice. Here are some that have been done on this website: <a href="http://stackoverflow.com/search?q=code+golf">stackoverflow.com/search?q=code+golf</a></span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/36457/john-t" title="14057 reputation" class="comment-user">John T</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment922004_1106929"><span title="2009-07-09 23:53:21Z" class="relativetime-clean">Jul 9 '09 at 23:53</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-925474" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy"><code>code-golf</code> =&gt; <a href="http://stackoverflow.com/questions/tagged/code-golf">stackoverflow.com/questions/tagged/code-golf</a></span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1337/brad-gilbert" title="12775 reputation" class="comment-user">Brad Gilbert</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment925474_1106929"><span title="2009-07-10 15:37:52Z" class="relativetime-clean">Jul 10 '09 at 15:37</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-1106929" data-rep="50" data-anon="true" class="comments-link " title="Use comments to ask for more information or suggest improvements. Avoid answering questions in comments.">show <b>6</b> more comments</a>
+    </td>
+</tr>        </tbody></table>
+</div>
+
+
+			<div id="answers">
+
+				<a name="tab-top"></a>
+				<div id="answers-header">
+					<div class="subheader answers-subheader">
+						<h2>
+								21 Answers
+                                <span style="display:none;" itemprop="answerCount">21</span>
+						</h2>
+						<div>
+							<div id="tabs">
+        <a href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value?answertab=active#tab-top" title="Answers with the latest activity first">active</a>
+        <a href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value?answertab=oldest#tab-top" title="Answers in the order they were provided">oldest</a>
+        <a class="youarehere" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value?answertab=votes#tab-top" title="Answers with the highest score first">votes</a>
+</div>
+						</div>
+					</div>    
+				</div>    
+
+
+
+
+  
+<a name="1107320"></a>
+<div id="answer-1107320" class="answer" data-answerid="1107320" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="1107320">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">30</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>I looked into this once a long time ago, and you can read my <a href="http://andrew.neitsch.ca/publications/m496pres1.nb.pdf" rel="nofollow">little write-up on it</a>. Here’s the <a href="http://andrew.neitsch.ca/publications/m496pres1.nb" rel="nofollow">Mathematica source</a>.</p>
+
+<p>By using generating functions, you can get a closed-form constant-time solution to the problem. Graham, Knuth, and Patashnik’s <em>Concrete Mathematics</em> is the book for this, and contains a fairly extensive discussion of the problem. Essentially you define a polynomial where the *n*th coefficient is the number of ways of making change for <em>n</em> dollars.</p>
+
+<p>Pages 4-5 of the writeup show how you can use Mathematica (or any other convenient computer algebra system) to compute the answer for 10^10^6 dollars in a couple seconds in three lines of code.</p>
+
+<p>(And this was long enough ago that that’s a couple of seconds on a 75Mhz Pentium...)</p>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/1107320" title="short permalink to this answer" class="short-link" id="link-post-1107320">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1107320/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/1107320/revisions" title="show all edits to this post">edited <span title="2013-07-09 20:35:26Z" class="relativetime">Jul 9 '13 at 20:35</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-07-10 01:49:39Z" class="relativetime">Jul 10 '09 at 1:49</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/14558/andrewdotn"><div class="gravatar-wrapper-32"><img src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/701bda63fa3973ece37a74ecc2be5be9" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/14558/andrewdotn">andrewdotn</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">9,073</span><span title="23 silver badges"><span class="badge2"></span><span class="badgecount">23</span></span><span title="46 bronze badges"><span class="badge3"></span><span class="badgecount">46</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1107320" class="comments " data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+
+
+    <tr id="comment-924651" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">+1: Wonderful answer :)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/69178/akappa" title="5322 reputation" class="comment-user">akappa</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment924651_1107320"><span title="2009-07-10 13:39:56Z" class="relativetime-clean">Jul 10 '09 at 13:39</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-926584" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="warm">7</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Good answer, but minor quibbles: note that (1) This gives the <i>number</i> of ways, while for some reason the question asks for the actual set of all ways. Of course, there can be no way of finding the set in polynomial time, since the output itself has superpolynomially many entries (2) It is debatable whether a generating function is a "closed form" (see Herbert Wilf's wonderful book <i>Generatingfunctionology</i>: <a href="http://www.math.upenn.edu/~wilf/DownldGF.html" rel="nofollow">math.upenn.edu/~wilf/DownldGF.html</a>) and if you mean an expression like (1+√5)^n, it takes Ω(log n) time to compute, not constant time.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/4958/shreevatsar" title="21159 reputation" class="comment-user">ShreevatsaR</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment926584_1107320"><span title="2009-07-10 18:33:12Z" class="relativetime-clean">Jul 10 '09 at 18:33</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-18193775" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Gentle introduction to dynamic programming. Also, I encourage anyone with a sequence problem to read <i>generatingfunctionology</i>.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/284795/colonel-panic" title="18745 reputation" class="comment-user">Colonel Panic</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment18193775_1107320"><span title="2012-11-11 18:17:01Z" class="relativetime-clean">Nov 11 '12 at 18:17</span></a></span>
+                    <span class="edited-yes" title="this comment was edited 2 times"></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-22288432" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Thanks so much Andrew ... this explanation helped me out so much ...Posting the scala function below .. should some one need it</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/803690/jayaram-s" title="76 reputation" class="comment-user">jayaram S</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment22288432_1107320"><span title="2013-03-29 02:48:45Z" class="relativetime-clean">Mar 29 '13 at 2:48</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-1107320" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+<div class="everyonelovesstackoverflow" id="careers3"><a href="http://careers.stackoverflow.com/" rel="nofollow" target="_blank"><img src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/366ec8614d054ab4b8e79a7e0ab2f6e1.png"></a></div>
+  
+<a name="1106973"></a>
+<div id="answer-1106973" class="answer" data-answerid="1106973" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="1106973">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">11</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>I would favor a recursive solution.  You have some list of denominations, if the smallest one can evenly divide any remaining currency amount, this should work fine.</p>
+
+<p>Basically, you move from largest to smallest denominations.<br>
+Recursively,</p>
+
+<ol>
+<li>You have a current total to fill, and a largest denomination (with more than 1 left).
+If there is only 1 denomination left, there is only one way to fill the total.  You can use 0 to k copies of your current denomination such that k * cur denomination &lt;= total.</li>
+<li>For 0 to k, call the function with the modified total and new largest denomination.</li>
+<li>Add up the results from 0 to k.  That's how many ways you can fill your total from the current denomination on down.  Return this number.</li>
+</ol>
+
+<p>Here's my python version of your stated problem, for 200 cents.  I get 1463 ways.  This version prints all the combinations and the final count total.</p>
+
+<pre><code>#!/usr/bin/python
+
+# find the number of ways to reach a total with the given number of combinations
+
+cents = 200
+denominations = [25, 10, 5, 1]
+names = {25: "quarter(s)", 10: "dime(s)", 5 : "nickel(s)", 1 : "pennies"}
+
+def count_combs(left, i, comb, add):
+    if add: comb.append(add)
+    if left == 0 or (i+1) == len(denominations):
+        if (i+1) == len(denominations) and left &gt; 0:
+            comb.append( (left, denominations[i]) )
+            i += 1
+        while i &lt; len(denominations):
+            comb.append( (0, denominations[i]) )
+            i += 1
+        print " ".join("%d %s" % (n,names[c]) for (n,c) in comb)
+        return 1
+    cur = denominations[i]
+    return sum(count_combs(left-x*cur, i+1, comb[:], (x,cur)) for x in range(0, int(left/cur)+1))
+
+print count_combs(cents, 0, [], None)
+</code></pre>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/1106973" title="short permalink to this answer" class="short-link" id="link-post-1106973">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1106973/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/1106973/revisions" title="show all edits to this post">edited <span title="2009-07-10 17:31:40Z" class="relativetime">Jul 10 '09 at 17:31</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-07-09 23:33:30Z" class="relativetime">Jul 9 '09 at 23:33</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/14257/leif"><div class="gravatar-wrapper-32"><img src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/256801cf45a79fc41b929b1365fb14d4" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/14257/leif">leif</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">855</span><span title="5 silver badges"><span class="badge2"></span><span class="badgecount">5</span></span><span title="8 bronze badges"><span class="badge3"></span><span class="badgecount">8</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1106973" class="comments " data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+
+
+    <tr id="comment-921989" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Haven't ran it, but by going through your logic, it makes sense :)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/191083/codingbear" title="2797 reputation" class="comment-user owner">codingbear</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment921989_1106973"><span title="2009-07-09 23:48:35Z" class="relativetime-clean">Jul 9 '09 at 23:48</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-923600" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">You can replace the last two lines of the function with "return sum(count_combs(...) for ...)" - that way the list doesn't get materialized at all. :)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/12030/nick-johnson" title="79809 reputation" class="comment-user">Nick Johnson</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment923600_1106973"><span title="2009-07-10 09:24:19Z" class="relativetime-clean">Jul 10 '09 at 9:24</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-924618" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Thanks for the tip. I'm always interested in ways to tighten up code.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/14257/leif" title="855 reputation" class="comment-user">leif</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment924618_1106973"><span title="2009-07-10 13:33:19Z" class="relativetime-clean">Jul 10 '09 at 13:33</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-1106973" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="15696606"></a>
+<div id="answer-15696606" class="answer" data-answerid="15696606" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="15696606">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">7</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>Scala function : </p>
+
+<pre><code>def countChange(money: Int, coins: List[Int]): Int = {
+
+def loop(money: Int, lcoins: List[Int], count: Int): Int = {
+  // if there are no more coins or if we run out of money ... return 0 
+  if ( lcoins.isEmpty || money &lt; 0) 0
+  else{
+    if (money == 0 ) count + 1   
+/* if the recursive subtraction leads to 0 money left - a prefect division hence return count +1 */
+    else
+/* keep iterating ... sum over money and the rest of the coins and money - the first item and the full set of coins left*/
+      loop(money, lcoins.tail,count) + loop(money - lcoins.head,lcoins, count)
+  }
+}
+
+val x = loop(money, coins, 0)
+Console println x
+x
+}
+</code></pre>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/15696606" title="short permalink to this answer" class="short-link" id="link-post-15696606">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/15696606/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <a href="http://stackoverflow.com/posts/15696606/revisions" title="show all edits to this post"><span title="2013-03-29 02:52:19Z" class="relativetime">Mar 29 '13 at 2:52</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Mar 29 &#39;13 at 2:52. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-15696606" href="http://stackoverflow.com/posts/15696606/revisions" title="show revision history for this post">
+        jayaram S
+        </a>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-15696606" class="comments " data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+
+
+    <tr id="comment-36222589" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Thanks!  This is a great start.  But, I think this fails when "money" starts out being 0  :)  .</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/1255828/aqn" title="439 reputation" class="comment-user">aqn</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment36222589_15696606"><span title="2014-05-11 21:33:43Z" class="relativetime-clean">May 11 at 21:33</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-15696606" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="1107115"></a>
+<div id="answer-1107115" class="answer" data-answerid="1107115" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="1107115">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>Here's some absolutely straightforward C++ code to solve the problem which did ask for all the combinations to be shown.</p>
+
+<pre><code>#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+int main(int argc, char *argv[])
+{
+    if (argc != 2)
+    {
+    	printf("usage: change amount-in-cents\n");
+    	return 1;
+    }
+
+    int total = atoi(argv[1]);
+
+    printf("quarter\tdime\tnickle\tpenny\tto make %d\n", total);
+
+    int combos = 0;
+
+    for (int q = 0; q &lt;= total / 25; q++)
+    {
+    	int total_less_q = total - q * 25;
+    	for (int d = 0; d &lt;= total_less_q / 10; d++)
+    	{
+    		int total_less_q_d = total_less_q - d * 10;
+    		for (int n = 0; n &lt;= total_less_q_d / 5; n++)
+    		{
+    			int p = total_less_q_d - n * 5;
+    			printf("%d\t%d\t%d\t%d\n", q, d, n, p);
+    			combos++;
+    		}
+    	}
+    }
+
+    printf("%d combinations\n", combos);
+
+    return 0;
+}
+</code></pre>
+
+<p>But I'm quite intrigued about the sub problem of just calculating the number of combinations.  I suspect there's a closed-form equation for it.</p>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/1107115" title="short permalink to this answer" class="short-link" id="link-post-1107115">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1107115/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-07-10 00:26:48Z" class="relativetime">Jul 10 '09 at 0:26</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/129594/george-phillips"><div class="gravatar-wrapper-32"><img src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/eed46874d698956c917babaf079fd573" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/129594/george-phillips">George Phillips</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">2,433</span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="13 bronze badges"><span class="badge3"></span><span class="badgecount">13</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1107115" class="comments " data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+
+
+    <tr id="comment-15033239" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="warm">5</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Surely this is C, not C++.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/632447/nikhil" title="1552 reputation" class="comment-user">nikhil</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment15033239_1107115"><span title="2012-07-09 19:29:00Z" class="relativetime-clean">Jul 9 '12 at 19:29</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-22125048" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">@George Phillips can u explain?</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/2109070/trying" title="4072 reputation" class="comment-user">Trying</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment22125048_1107115"><span title="2013-03-24 17:47:43Z" class="relativetime-clean">Mar 24 '13 at 17:47</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-26172190" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">I think it's pretty straightforward.  Basically, the idea is to iterate all quarters (using 0,1,2 .. max), and then iterate through all dimes based on the quarters used, etc..</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/301336/peter-lee" title="2644 reputation" class="comment-user">Peter Lee</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment26172190_1107115"><span title="2013-07-29 02:56:50Z" class="relativetime-clean">Jul 29 '13 at 2:56</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-26172196" class="comment ">
+        <td class="comment-actions">
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                <span title="number of &#39;useful comment&#39; votes received" class="cool">1</span>
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">The downside for this solution is: if there are 50-cent, 100-cent, 500-cent coins, then we have to use 6-level loops...</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/301336/peter-lee" title="2644 reputation" class="comment-user">Peter Lee</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment26172196_1107115"><span title="2013-07-29 02:57:41Z" class="relativetime-clean">Jul 29 '13 at 2:57</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-1107115" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="18865778"></a>
+<div id="answer-18865778" class="answer" data-answerid="18865778" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="18865778">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">5</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>Clean scala function:</p>
+
+<pre><code>def countChange(money: Int, coins: List[Int]): Int =
+  if (money == 0) 1
+  else if (coins.isEmpty || money &lt; 0) 0
+  else countChange(money - coins.head, coins) + countChange(money, coins.tail)
+</code></pre>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/18865778" title="short permalink to this answer" class="short-link" id="link-post-18865778">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/18865778/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <a href="http://stackoverflow.com/posts/18865778/revisions" title="show all edits to this post"><span title="2013-09-18 07:00:50Z" class="relativetime">Sep 18 '13 at 7:00</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Sep 18 &#39;13 at 7:00. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-18865778" href="http://stackoverflow.com/posts/18865778/revisions" title="show revision history for this post">
+        Vlad
+        </a>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-18865778" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-18865778" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="1106968"></a>
+<div id="answer-1106968" class="answer" data-answerid="1106968" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="1106968">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>Let C(i,J) the set of combinations of making i cents using the values in the set J.</p>
+
+<p>You can define C as that:</p>
+
+<p><img src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/result.png" alt="alt text"></p>
+
+<p>(first(J) takes <strong>in a deterministic way</strong> an element of a set)</p>
+
+<p>It turns out a pretty recursive function... and reasonably efficient if you use memoization ;)</p>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/1106968" title="short permalink to this answer" class="short-link" id="link-post-1106968">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1106968/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/1106968/revisions" title="show all edits to this post">edited <span title="2009-07-09 23:53:40Z" class="relativetime">Jul 9 '09 at 23:53</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-07-09 23:31:40Z" class="relativetime">Jul 9 '09 at 23:31</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/69178/akappa"><div class="gravatar-wrapper-32"><img src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/17632e67452620caf9cb4ef054ba5c3b" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/69178/akappa">akappa</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">5,322</span><span title="17 silver badges"><span class="badge2"></span><span class="badgecount">17</span></span><span title="46 bronze badges"><span class="badge3"></span><span class="badgecount">46</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1106968" class="comments " data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+
+
+    <tr id="comment-921951" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">Yeah, this ("dynamic programming", in a sense) is going to be the optimal solution.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/4958/shreevatsar" title="21159 reputation" class="comment-user">ShreevatsaR</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment921951_1106968"><span title="2009-07-09 23:38:07Z" class="relativetime-clean">Jul 9 '09 at 23:38</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-921998" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">What does first() do? Sorry, I'm trying to recall my math/logic notations....</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/191083/codingbear" title="2797 reputation" class="comment-user owner">codingbear</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment921998_1106968"><span title="2009-07-09 23:51:33Z" class="relativetime-clean">Jul 9 '09 at 23:51</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-922002" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">you're right: take J as a list and not as a set: then first(J) brings to you the first element and J \ first(J) gives to you the rest of the list.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/69178/akappa" title="5322 reputation" class="comment-user">akappa</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment922002_1106968"><span title="2009-07-09 23:52:45Z" class="relativetime-clean">Jul 9 '09 at 23:52</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-1106968" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="1109625"></a>
+<div id="answer-1109625" class="answer" data-answerid="1109625" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="1109625">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">4</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>This is very similar to <a href="http://projecteuler.net/index.php?section=problems&id=31" rel="nofollow">Project Euler Problem #31</a>.  Check out the answer forum (visible once you supply the correct answer) for other interesting solutions.</p>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/1109625" title="short permalink to this answer" class="short-link" id="link-post-1109625">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1109625/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info ">
+    <div class="user-action-time">
+        answered <span title="2009-07-10 13:46:46Z" class="relativetime">Jul 10 '09 at 13:46</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/16434/luke"><div class="gravatar-wrapper-32"><img src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/7bdfd753b62bc4dcd303b7d4098e284f" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/16434/luke">luke</a><br>
+        <span class="reputation-score" title="reputation score 16305" dir="ltr">16.3k</span><span title="2 gold badges"><span class="badge1"></span><span class="badgecount">2</span></span><span title="40 silver badges"><span class="badge2"></span><span class="badgecount">40</span></span><span title="65 bronze badges"><span class="badge3"></span><span class="badgecount">65</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1109625" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-1109625" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="1107130"></a>
+<div id="answer-1107130" class="answer" data-answerid="1107130" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="1107130">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>If the currency system allows it, a simple <a href="http://en.wikipedia.org/wiki/Greedy_algorithm" rel="nofollow">greedy algorithm</a> that takes as many of each coin as possible, starting with the highest value currency.</p>
+
+<p>Otherwise, dynamic programming is required to find an optimal solution quickly since this problem is essentially the <a href="http://en.wikipedia.org/wiki/Knapsack_problem" rel="nofollow">knapsack problem</a>.</p>
+
+<p>For example, if a currency system has the coins: <code>{13, 8, 1}</code>, the greedy solution would make change for 24 as <code>{13, 8, 1, 1, 1}</code>, but the true optimal solution is <code>{8, 8, 8}</code></p>
+
+<p><strong>Edit: I thought we were making change optimally, not listing all the ways to make change for a dollar. My recent interview asked how to make change so I jumped ahead before finishing to read the question.</strong></p>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/1107130" title="short permalink to this answer" class="short-link" id="link-post-1107130">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1107130/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/1107130/revisions" title="show all edits to this post">edited <span title="2009-07-11 18:30:54Z" class="relativetime">Jul 11 '09 at 18:30</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-07-10 00:28:53Z" class="relativetime">Jul 10 '09 at 0:28</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/68507/benoit"><div class="gravatar-wrapper-32"><img src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/ff2bc806f51ff0e96c8a22e6fb9cc282" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/68507/benoit">Benoit</a><br>
+        <span class="reputation-score" title="reputation score 39090" dir="ltr">39.1k</span><span title="14 gold badges"><span class="badge1"></span><span class="badgecount">14</span></span><span title="98 silver badges"><span class="badge2"></span><span class="badgecount">98</span></span><span title="168 bronze badges"><span class="badge3"></span><span class="badgecount">168</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1107130" class="comments " data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+
+
+    <tr id="comment-922662" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">the problem is not necessarily for one dollar -- it could 2 or 23, so your solution is still the only correct one.</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/99989/neil-g" title="6968 reputation" class="comment-user">Neil G</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment922662_1107130"><span title="2009-07-10 04:20:18Z" class="relativetime-clean">Jul 10 '09 at 4:20</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+    <tr id="comment-922664" class="comment ">
+        <td>
+            <table>
+                <tbody>
+                    <tr>
+                        <td class=" comment-score">
+                                &nbsp;&nbsp;
+                        </td>
+                        <td>
+                                &nbsp;
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </td>
+        <td class="comment-text">
+            <div style="display: block;" class="comment-body">
+                <span class="comment-copy">(for the general case)</span>
+                –&nbsp;
+                    <a href="http://stackoverflow.com/users/99989/neil-g" title="6968 reputation" class="comment-user">Neil G</a>
+                <span class="comment-date" dir="ltr"><a class="comment-link" href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#comment922664_1107130"><span title="2009-07-10 04:21:25Z" class="relativetime-clean">Jul 10 '09 at 4:21</span></a></span>
+                                                                            </div>
+                    </td>
+    </tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-1107130" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="17915345"></a>
+<div id="answer-17915345" class="answer" data-answerid="17915345" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="17915345">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">3</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>The sub problem is a typical Dynamic Programming problem.</p>
+
+<pre><code>/* Q: Given some dollar value in cents (e.g. 200 = 2 dollars, 1000 = 10 dollars),
+      find the number of combinations of coins that make up the dollar value.
+      There are only penny, nickel, dime, and quarter.
+      (quarter = 25 cents, dime = 10 cents, nickel = 5 cents, penny = 1 cent) */
+/* A:
+Reference: http://andrew.neitsch.ca/publications/m496pres1.nb.pdf
+f(n, k): number of ways of making change for n cents, using only the first
+         k+1 types of coins.
+
+          +- 0,                        n &lt; 0 || k &lt; 0
+f(n, k) = |- 1,                        n == 0
+          +- f(n, k-1) + f(n-C[k], k), else
+ */
+
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+using namespace std;
+
+int C[] = {1, 5, 10, 25};
+
+// Recursive: very slow, O(2^n)
+int f(int n, int k)
+{
+    if (n &lt; 0 || k &lt; 0)
+        return 0;
+
+    if (n == 0)
+        return 1;
+
+    return f(n, k-1) + f(n-C[k], k); 
+}
+
+// Non-recursive: fast, but still O(nk)
+int f_NonRec(int n, int k)
+{
+    vector&lt;vector&lt;int&gt; &gt; table(n+1, vector&lt;int&gt;(k+1, 1));
+
+    for (int i = 0; i &lt;= n; ++i)
+    {
+        for (int j = 0; j &lt;= k; ++j)
+        {
+            if (i &lt; 0 || j &lt; 0) // Impossible, for illustration purpose
+            {
+                table[i][j] = 0;
+            }
+            else if (i == 0 || j == 0) // Very Important
+            {
+                table[i][j] = 1;
+            }
+            else
+            {
+                // The recursion. Be careful with the vector boundary
+                table[i][j] = table[i][j-1] + 
+                    (i &lt; C[j] ? 0 : table[i-C[j]][j]);
+            }
+        }
+    }
+
+    return table[n][k];
+}
+
+int main()
+{
+    cout &lt;&lt; f(100, 3) &lt;&lt; ", " &lt;&lt; f_NonRec(100, 3) &lt;&lt; endl;
+    cout &lt;&lt; f(200, 3) &lt;&lt; ", " &lt;&lt; f_NonRec(200, 3) &lt;&lt; endl;
+    cout &lt;&lt; f(1000, 3) &lt;&lt; ", " &lt;&lt; f_NonRec(1000, 3) &lt;&lt; endl;
+
+    return 0;
+}
+</code></pre>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/17915345" title="short permalink to this answer" class="short-link" id="link-post-17915345">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/17915345/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <a href="http://stackoverflow.com/posts/17915345/revisions" title="show all edits to this post"><span title="2013-07-29 02:49:49Z" class="relativetime">Jul 29 '13 at 2:49</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Jul 29 &#39;13 at 2:49. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-17915345" href="http://stackoverflow.com/posts/17915345/revisions" title="show revision history for this post">
+        Peter Lee
+        </a>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-17915345" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-17915345" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="1107072"></a>
+<div id="answer-1107072" class="answer" data-answerid="1107072" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="1107072">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>semi-hack to get around the unique combination problem - force descending order:</p>
+
+<pre>$denoms = [1,5,10,25]
+def all_combs(sum,last) 
+  return 1 if sum == 0
+  return $denoms.select{|d| d &amp;le sum &amp;&amp; d &amp;le last}.inject(0) {|total,denom|
+           total+all_combs(sum-denom,denom)}
+end
+</pre>
+
+<p>This will run slow since it won't be memoized, but you get the idea.</p>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/1107072" title="short permalink to this answer" class="short-link" id="link-post-1107072">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1107072/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-07-10 00:10:05Z" class="relativetime">Jul 10 '09 at 0:10</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/110213/klochner"><div class="gravatar-wrapper-32"><img src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/06d2325506af65508893e873ca193d6a" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/110213/klochner">klochner</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">5,515</span><span title="1 gold badge"><span class="badge1"></span><span class="badgecount">1</span></span><span title="14 silver badges"><span class="badge2"></span><span class="badgecount">14</span></span><span title="35 bronze badges"><span class="badge3"></span><span class="badgecount">35</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1107072" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-1107072" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="20602402"></a>
+<div id="answer-20602402" class="answer" data-answerid="20602402" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="20602402">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">2</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>This is my answer in Python. It does not use recursion:</p>
+
+<pre><code>def crossprod (list1, list2):
+    output = 0
+    for i in range(0,len(list1)):
+        output += list1[i]*list2[i]
+
+    return output
+
+def breakit(target, coins):
+    coinslimit = [(target / coins[i]) for i in range(0,len(coins))]
+    count = 0
+    temp = []
+    for i in range(0,len(coins)):
+        temp.append([j for j in range(0,coinslimit[i]+1)])
+
+
+    r=[[]]
+    for x in temp:
+        t = []
+        for y in x:
+            for i in r:
+                t.append(i+[y])
+        r = t
+
+    for targets in r:
+        if crossprod(targets, coins) == target:
+            print targets
+            count +=1
+    return count
+
+
+
+
+if __name__ == "__main__":
+    coins = [25,10,5,1]
+    target = 78
+    print breakit(target, coins)
+</code></pre>
+
+<p>Example output</p>
+
+<pre><code>    ...
+    1 ( 10 cents)  2 ( 5 cents)  58 ( 1 cents)  
+    4 ( 5 cents)  58 ( 1 cents)  
+    1 ( 10 cents)  1 ( 5 cents)  63 ( 1 cents)  
+    3 ( 5 cents)  63 ( 1 cents)  
+    1 ( 10 cents)  68 ( 1 cents)  
+    2 ( 5 cents)  68 ( 1 cents)  
+    1 ( 5 cents)  73 ( 1 cents)  
+    78 ( 1 cents)  
+    Number of solutions =  121
+</code></pre>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/20602402" title="short permalink to this answer" class="short-link" id="link-post-20602402">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/20602402/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <a href="http://stackoverflow.com/posts/20602402/revisions" title="show all edits to this post"><span title="2013-12-16 02:11:24Z" class="relativetime">Dec 16 '13 at 2:11</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Dec 16 &#39;13 at 2:11. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-20602402" href="http://stackoverflow.com/posts/20602402/revisions" title="show revision history for this post">
+        Mark
+        </a>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-20602402" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-20602402" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="1127892"></a>
+<div id="answer-1127892" class="answer" data-answerid="1127892" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="1127892">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p><a href="http://paddy3118.blogspot.com/2009/06/xkcd-simpler-knapsack-solution.html" rel="nofollow">This blog entry of mine</a> solves this knapsack like problem for the figures from an <a href="http://xkcd.com/287/" rel="nofollow">XKCD comic</a>. A simple change to the <code>items</code> dict and the <code>exactcost</code> value will yield all solutions for your problem too.</p>
+
+<p>If the problem were to find the change that used the least cost, then a naive greedy algorithm that used as much of the highest value coin might well fail for some combinations of coins and target amount. For example if there are coins with values 1, 3, and 4; and the target amount is 6 then the greedy algorithm might suggest three coins of value 4, 1, and 1 when it is easy to see that you could use two coins each of value 3.</p>
+
+<ul>
+<li>Paddy.</li>
+</ul>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/1127892" title="short permalink to this answer" class="short-link" id="link-post-1127892">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1127892/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-07-14 20:39:03Z" class="relativetime">Jul 14 '09 at 20:39</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/10562/paddy3118"><div class="gravatar-wrapper-32"><img src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/89f032bea7ea14c8157aaa72a243bd06" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/10562/paddy3118">Paddy3118</a><br>
+        <span class="reputation-score" title="reputation score " dir="ltr">1,735</span><span title="7 silver badges"><span class="badge2"></span><span class="badgecount">7</span></span><span title="19 bronze badges"><span class="badge3"></span><span class="badgecount">19</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1127892" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-1127892" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="8882905"></a>
+<div id="answer-8882905" class="answer" data-answerid="8882905" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="8882905">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>I used a really simple loop to solve this in a BlackJack game I'm writing in HTML5 using the Isogenic Game Engine. You can see a video of the BlackJack game which shows the chips that were used to make up a bet from the bet value on the BlackJack table above the cards: <a href="http://bit.ly/yUF6iw" rel="nofollow">http://bit.ly/yUF6iw</a></p>
+
+<p>In this example, betValue equals the total value that you wish to divide into "coins" or "chips" or whatever.</p>
+
+<p>You can set the chipValues array items to whatever your coins or chips are worth. Make sure that the items are ordered from lowest value to highest value (penny, nickel, dime, quarter).</p>
+
+<p>Here is the JavaScript:</p>
+
+<pre><code>// Set the total that we want to divide into chips
+var betValue = 191;
+
+// Set the chip values
+var chipValues = [
+    1,
+    5,
+    10,
+    25
+];
+
+// Work out how many of each chip is required to make up the bet value
+var tempBet = betValue;
+var tempChips = [];
+for (var i = chipValues.length - 1; i &gt;= 0; i--) {
+    var chipValue = chipValues[i];
+    var divided = Math.floor(tempBet / chipValue);
+
+    if (divided &gt;= 1) {
+        tempChips[i] = divided;
+        tempBet -= divided * chipValues[i];
+    }
+
+    if (tempBet == 0) { break; }
+}
+
+// Display the chips and how many of each make up the betValue
+for (var i in tempChips) {
+    console.log(tempChips[i] + ' of ' + chipValues[i]);
+}
+</code></pre>
+
+<p>You obviously don't need to do the last loop and it is only there to console.log the final array values.</p>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/8882905" title="short permalink to this answer" class="short-link" id="link-post-8882905">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/8882905/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <a href="http://stackoverflow.com/posts/8882905/revisions" title="show all edits to this post"><span title="2012-01-16 16:19:27Z" class="relativetime">Jan 16 '12 at 16:19</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Jan 16 &#39;12 at 16:19. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-8882905" href="http://stackoverflow.com/posts/8882905/revisions" title="show revision history for this post">
+        Rob Evans
+        </a>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-8882905" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-8882905" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="17394060"></a>
+<div id="answer-17394060" class="answer" data-answerid="17394060" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="17394060">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>I know this is a very old question. I was searching through the proper answer and couldn't find anything that is simple and satisfactory. Took me some time but was able to jot down something.</p>
+
+<pre><code>function denomination(coins, original_amount){
+    var original_amount = original_amount;
+    var original_best = [ ];
+
+    for(var i=0;i&lt;coins.length; i++){
+      var amount = original_amount;
+      var best = [ ];
+      var tempBest = [ ]
+      while(coins[i]&lt;=amount){
+        amount = amount - coins[i];
+        best.push(coins[i]);
+      }
+      if(amount&gt;0 &amp;&amp; coins.length&gt;1){
+        tempBest = denomination(coins.slice(0,i).concat(coins.slice(i+1,coins.length)), amount);
+        //best = best.concat(denomination(coins.splice(i,1), amount));
+      }
+      if(tempBest.length!=0 || (best.length!=0 &amp;&amp; amount==0)){
+        best = best.concat(tempBest);
+        if(original_best.length==0 ){
+          original_best = best
+        }else if(original_best.length &gt; best.length ){
+          original_best = best;
+        }  
+      }
+    }
+    return original_best;  
+  }
+  denomination( [1,10,3,9] , 19 );
+</code></pre>
+
+<p>This is a javascript solution and uses recursion.</p>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/17394060" title="short permalink to this answer" class="short-link" id="link-post-17394060">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/17394060/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <a href="http://stackoverflow.com/posts/17394060/revisions" title="show all edits to this post"><span title="2013-06-30 19:28:29Z" class="relativetime">Jun 30 '13 at 19:28</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Jun 30 &#39;13 at 19:28. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-17394060" href="http://stackoverflow.com/posts/17394060/revisions" title="show revision history for this post">
+        varun
+        </a>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-17394060" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-17394060" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="18478616"></a>
+<div id="answer-18478616" class="answer" data-answerid="18478616" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="18478616">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>This is a really old question, but I came up with a recursive solution that seemed smaller than all the others, so here goes - </p>
+
+<pre><code> public static void printAll(int ind, int[] denom,int N,int[] vals){
+    if(N==0){
+        System.out.println(Arrays.toString(vals));
+        return;
+    }
+    if(ind == (denom.length))return;             
+    int currdenom = denom[ind];
+    for(int i=0;i&lt;=(N/currdenom);i++){
+        vals[ind] = i;
+        printAll(ind+1,denom,N-i*currdenom,vals);
+    }
+ }
+</code></pre>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/18478616" title="short permalink to this answer" class="short-link" id="link-post-18478616">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/18478616/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/18478616/revisions" title="show all edits to this post">edited <span title="2013-08-28 02:56:58Z" class="relativetime">Aug 28 '13 at 2:56</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Aug 28 &#39;13 at 2:49. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-18478616" href="http://stackoverflow.com/posts/18478616/revisions" title="show revision history for this post">
+        2 revs<br></a><a href="http://stackoverflow.com/users/1826912">Rohit Pandey</a>
+        
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-18478616" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-18478616" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="19595523"></a>
+<div id="answer-19595523" class="answer" data-answerid="19595523" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="19595523">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <pre><code># short and sweet with O(n) table memory    
+
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int count( std::vector&lt;int&gt; s, int n )
+{
+  std::vector&lt;int&gt; table(n+1,0);
+
+  table[0] = 1;
+  for ( auto&amp; k : s )
+    for(int j=k; j&lt;=n; ++j)
+      table[j] += table[j-k];
+
+  return table[n];
+}
+
+int main()
+{
+  std::cout &lt;&lt;  count({25, 10, 5, 1}, 100) &lt;&lt; std::endl;
+  return 0;
+}
+</code></pre>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/19595523" title="short permalink to this answer" class="short-link" id="link-post-19595523">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/19595523/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/19595523/revisions" title="show all edits to this post">edited <span title="2013-10-25 22:33:59Z" class="relativetime">Oct 25 '13 at 22:33</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Oct 25 &#39;13 at 16:57. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-19595523" href="http://stackoverflow.com/posts/19595523/revisions" title="show revision history for this post">
+        3 revs<br></a><a href="http://stackoverflow.com/users/708803">bjackfly</a>
+        
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-19595523" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-19595523" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="20822698"></a>
+<div id="answer-20822698" class="answer" data-answerid="20822698" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="20822698">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <pre><code>public class Coins {
+
+static int ac = 421;
+static int bc = 311;
+static int cc = 11;
+
+static int target = 4000;
+
+public static void main(String[] args) {
+
+
+    method2();
+}
+
+  public static void method2(){
+    //running time n^2
+
+    int da = target/ac;
+    int db = target/bc;     
+
+    for(int i=0;i&lt;=da;i++){         
+        for(int j=0;j&lt;=db;j++){             
+            int rem = target-(i*ac+j*bc);               
+            if(rem &lt; 0){                    
+                break;                  
+            }else{                  
+                if(rem%cc==0){                  
+                    System.out.format("\n%d, %d, %d ---- %d + %d + %d = %d \n", i, j, rem/cc, i*ac, j*bc, (rem/cc)*cc, target);                     
+                }                   
+            }                   
+        }           
+    }       
+}
+ }
+</code></pre>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/20822698" title="short permalink to this answer" class="short-link" id="link-post-20822698">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/20822698/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <a href="http://stackoverflow.com/posts/20822698/revisions" title="show all edits to this post"><span title="2013-12-29 06:17:32Z" class="relativetime">Dec 29 '13 at 6:17</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Dec 29 &#39;13 at 6:17. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-20822698" href="http://stackoverflow.com/posts/20822698/revisions" title="show revision history for this post">
+        Amit Patil
+        </a>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-20822698" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-20822698" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="21036436"></a>
+<div id="answer-21036436" class="answer" data-answerid="21036436" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="21036436">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">1</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <pre><code>public class RepresentCents {
+public static int sum(int n){
+int count = 0;
+for (int i = 0; i &lt;= n / 25; i++)
+    for (int j = 0; j &lt;= n / 10; j++)
+        for (int k = 0; k &lt;= n / 5; k++)
+            for (int l = 0; l &lt;= n; l++){   
+                int v = i * 25 + j * 10 + k * 5 + l;
+                if (v == n)
+                    count ++;
+                else if (v &gt; n)
+                    break;
+            }
+return count;
+}
+
+public static void main(String[] args){
+    System.out.println(sum(100));
+}
+}
+</code></pre>
+
+<p>The code is using java to solve this problem and it also works... This method may not be a good idea because of too many loops, but it's really a straight forward way.</p>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/21036436" title="short permalink to this answer" class="short-link" id="link-post-21036436">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/21036436/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <a href="http://stackoverflow.com/posts/21036436/revisions" title="show all edits to this post"><span title="2014-01-10 04:51:11Z" class="relativetime">Jan 10 at 4:51</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Jan 10 at 4:51. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-21036436" href="http://stackoverflow.com/posts/21036436/revisions" title="show revision history for this post">
+        Zihan
+        </a>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-21036436" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-21036436" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="1106944"></a>
+<div id="answer-1106944" class="answer" data-answerid="1106944" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="1106944">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>Both: iterate through all denominations from high to low, take one of denomination, subtract from requried total, then recurse on remainder (constraining avilable denominations to be equal or lower to current iteration value.)</p>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/1106944" title="short permalink to this answer" class="short-link" id="link-post-1106944">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1106944/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-07-09 23:22:29Z" class="relativetime">Jul 9 '09 at 23:22</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/82511/djna"><div class="gravatar-wrapper-32"><img src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/9df488f3711680cb831c146a5aa437fa" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/82511/djna">djna</a><br>
+        <span class="reputation-score" title="reputation score 34586" dir="ltr">34.6k</span><span title="5 gold badges"><span class="badge1"></span><span class="badgecount">5</span></span><span title="40 silver badges"><span class="badge2"></span><span class="badgecount">40</span></span><span title="70 bronze badges"><span class="badge3"></span><span class="badgecount">70</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1106944" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-1106944" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="1107278"></a>
+<div id="answer-1107278" class="answer" data-answerid="1107278" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="1107278">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>Duh, I feel stupid right now. Below there is an overly complicated solution, which I'll preserve because it <em>is</em> a solution, after all. A simple solution would be this:</p>
+
+<pre><code>// Generate a pretty string
+val coinNames = List(("quarter", "quarters"), 
+                     ("dime", "dimes"), 
+                     ("nickel", "nickels"), 
+                     ("penny", "pennies"))
+def coinsString = 
+  Function.tupled((quarters: Int, dimes: Int, nickels:Int, pennies: Int) =&gt; (
+    List(quarters, dimes, nickels, pennies) 
+    zip coinNames // join with names
+    map (t =&gt; (if (t._1 != 1) (t._1, t._2._2) else (t._1, t._2._1))) // correct for number
+    map (t =&gt; t._1 + " " + t._2) // qty name
+    mkString " "
+  ))
+
+def allCombinations(amount: Int) = 
+ (for{quarters &lt;- 0 to (amount / 25)
+      dimes &lt;- 0 to ((amount - 25*quarters) / 10)
+      nickels &lt;- 0 to ((amount - 25*quarters - 10*dimes) / 5)
+  } yield (quarters, dimes, nickels, amount - 25*quarters - 10*dimes - 5*nickels)
+ ) map coinsString mkString "\n"
+</code></pre>
+
+<p>Here is the other solution. This solution is based on the observation that each coin is a multiple of the others, so they can be represented in terms of them. </p>
+
+<pre><code>// Just to make things a bit more readable, as these routines will access
+// arrays a lot
+val coinValues = List(25, 10, 5, 1)
+val coinNames = List(("quarter", "quarters"), 
+                     ("dime", "dimes"), 
+                     ("nickel", "nickels"), 
+                     ("penny", "pennies"))
+val List(quarter, dime, nickel, penny) = coinValues.indices.toList
+
+
+// Find the combination that uses the least amount of coins
+def leastCoins(amount: Int): Array[Int] =
+  ((List(amount) /: coinValues) {(list, coinValue) =&gt;
+    val currentAmount = list.head
+    val numberOfCoins = currentAmount / coinValue
+    val remainingAmount = currentAmount % coinValue
+    remainingAmount :: numberOfCoins :: list.tail
+  }).tail.reverse.toArray
+
+// Helper function. Adjust a certain amount of coins by
+// adding or subtracting coins of each type; this could
+// be made to receive a list of adjustments, but for so
+// few types of coins, it's not worth it.
+def adjust(base: Array[Int], 
+           quarters: Int, 
+           dimes: Int, 
+           nickels: Int, 
+           pennies: Int): Array[Int] =
+  Array(base(quarter) + quarters, 
+        base(dime) + dimes, 
+        base(nickel) + nickels, 
+        base(penny) + pennies)
+
+// We decrease the amount of quarters by one this way
+def decreaseQuarter(base: Array[Int]): Array[Int] =
+  adjust(base, -1, +2, +1, 0)
+
+// Dimes are decreased this way
+def decreaseDime(base: Array[Int]): Array[Int] =
+  adjust(base, 0, -1, +2, 0)
+
+// And here is how we decrease Nickels
+def decreaseNickel(base: Array[Int]): Array[Int] =
+  adjust(base, 0, 0, -1, +5)
+
+// This will help us find the proper decrease function
+val decrease = Map(quarter -&gt; decreaseQuarter _,
+                   dime -&gt; decreaseDime _,
+                   nickel -&gt; decreaseNickel _)
+
+// Given a base amount of coins of each type, and the type of coin,
+// we'll produce a list of coin amounts for each quantity of that particular
+// coin type, up to the "base" amount
+def coinSpan(base: Array[Int], whichCoin: Int) = 
+  (List(base) /: (0 until base(whichCoin)).toList) { (list, _) =&gt;
+    decrease(whichCoin)(list.head) :: list
+  }
+
+// Generate a pretty string
+def coinsString(base: Array[Int]) = (
+  base 
+  zip coinNames // join with names
+  map (t =&gt; (if (t._1 != 1) (t._1, t._2._2) else (t._1, t._2._1))) // correct for number
+  map (t =&gt; t._1 + " " + t._2)
+  mkString " "
+)
+
+// So, get a base amount, compute a list for all quarters variations of that base,
+// then, for each combination, compute all variations of dimes, and then repeat
+// for all variations of nickels.
+def allCombinations(amount: Int) = {
+  val base = leastCoins(amount)
+  val allQuarters = coinSpan(base, quarter)
+  val allDimes = allQuarters flatMap (base =&gt; coinSpan(base, dime))
+  val allNickels = allDimes flatMap (base =&gt; coinSpan(base, nickel))
+  allNickels map coinsString mkString "\n"
+}
+</code></pre>
+
+<p>So, for 37 coins, for example:</p>
+
+<pre><code>scala&gt; println(allCombinations(37))
+0 quarter 0 dimes 0 nickels 37 pennies
+0 quarter 0 dimes 1 nickel 32 pennies
+0 quarter 0 dimes 2 nickels 27 pennies
+0 quarter 0 dimes 3 nickels 22 pennies
+0 quarter 0 dimes 4 nickels 17 pennies
+0 quarter 0 dimes 5 nickels 12 pennies
+0 quarter 0 dimes 6 nickels 7 pennies
+0 quarter 0 dimes 7 nickels 2 pennies
+0 quarter 1 dime 0 nickels 27 pennies
+0 quarter 1 dime 1 nickel 22 pennies
+0 quarter 1 dime 2 nickels 17 pennies
+0 quarter 1 dime 3 nickels 12 pennies
+0 quarter 1 dime 4 nickels 7 pennies
+0 quarter 1 dime 5 nickels 2 pennies
+0 quarter 2 dimes 0 nickels 17 pennies
+0 quarter 2 dimes 1 nickel 12 pennies
+0 quarter 2 dimes 2 nickels 7 pennies
+0 quarter 2 dimes 3 nickels 2 pennies
+0 quarter 3 dimes 0 nickels 7 pennies
+0 quarter 3 dimes 1 nickel 2 pennies
+1 quarter 0 dimes 0 nickels 12 pennies
+1 quarter 0 dimes 1 nickel 7 pennies
+1 quarter 0 dimes 2 nickels 2 pennies
+1 quarter 1 dime 0 nickels 2 pennies
+</code></pre>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/1107278" title="short permalink to this answer" class="short-link" id="link-post-1107278">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/1107278/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        <a href="http://stackoverflow.com/posts/1107278/revisions" title="show all edits to this post">edited <span title="2009-07-10 03:11:10Z" class="relativetime">Jul 10 '09 at 3:11</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info user-hover">
+    <div class="user-action-time">
+        answered <span title="2009-07-10 01:28:13Z" class="relativetime">Jul 10 '09 at 1:28</span>
+    </div>
+    <div class="user-gravatar32">
+        <a href="http://stackoverflow.com/users/53013/daniel-c-sobral"><div class="gravatar-wrapper-32"><img src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/6d43da5df0e52fc31c55e6a227bb23f4" alt=""></div></a>
+    </div>
+    <div class="user-details">
+        <a href="http://stackoverflow.com/users/53013/daniel-c-sobral">Daniel C. Sobral</a><br>
+        <span class="reputation-score" title="reputation score 160104" dir="ltr">160k</span><span title="35 gold badges"><span class="badge1"></span><span class="badgecount">35</span></span><span title="301 silver badges"><span class="badge2"></span><span class="badgecount">301</span></span><span title="485 bronze badges"><span class="badge3"></span><span class="badgecount">485</span></span>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-1107278" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-1107278" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+
+  
+<a name="24420824"></a>
+<div id="answer-24420824" class="answer" data-answerid="24420824" itemscope="" itemtype="http://schema.org/Answer">
+    <table>
+        <tbody><tr>
+            <td class="votecell">
+                
+
+<div class="vote">
+    <input type="hidden" name="_id_" value="24420824">
+    <a class="vote-up-off" title="This answer is useful">up vote</a>
+    <span itemprop="upvoteCount" class="vote-count-post ">0</span>
+    <a class="vote-down-off" title="This answer is not useful">down vote</a>
+    
+
+
+</div>
+
+            </td>
+            
+
+
+<td class="answercell">
+    <div class="post-text" itemprop="text">
+            <p>Java solution</p>
+
+<pre><code>import java.util.Arrays;
+import java.util.Scanner;
+
+
+public class nCents {
+
+
+
+public static void main(String[] args) {
+
+    Scanner input=new Scanner(System.in);
+    int cents=input.nextInt();
+    int num_ways [][] =new int [5][cents+1];
+
+    //putting in zeroes to offset
+    int getCents[]={0 , 0 , 5 , 10 , 25};
+    Arrays.fill(num_ways[0], 0);
+    Arrays.fill(num_ways[1], 1);
+
+    int current_cent=0;
+    for(int i=2;i&lt;num_ways.length;i++){
+
+        current_cent=getCents[i];
+
+        for(int j=1;j&lt;num_ways[0].length;j++){
+            if(j-current_cent&gt;=0){
+                if(j-current_cent==0){
+                    num_ways[i][j]=num_ways[i-1][j]+1;
+                }else{
+                    num_ways[i][j]=num_ways[i][j-current_cent]+num_ways[i-1][j];
+                }
+            }else{
+                num_ways[i][j]=num_ways[i-1][j];
+            }
+
+
+        }
+
+
+    }
+
+
+
+    System.out.println(num_ways[num_ways.length-1][num_ways[0].length-1]);
+
+}
+</code></pre>
+
+<p>}</p>
+
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+<div class="post-menu"><a href="http://stackoverflow.com/a/24420824" title="short permalink to this answer" class="short-link" id="link-post-24420824">share</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/24420824/edit" class="suggest-edit-post" title="">improve this answer</a></div>                    </td>
+    <td align="right" class="post-signature">
+<div class="user-info ">
+    <div class="user-action-time">
+        answered <a href="http://stackoverflow.com/posts/24420824/revisions" title="show all edits to this post"><span title="2014-06-26 00:45:30Z" class="relativetime">Jun 26 at 0:45</span></a>
+    </div>
+    <div class="user-gravatar32">
+        
+    </div>
+    <div class="user-details">
+        <br>
+        
+    </div>
+</div>    </td>
+            
+
+
+    <td align="right" class="post-signature">   
+       
+
+    <div class="user-info">
+    <div class="user-details">
+        <span class="community-wiki" title="This post is community owned as of Jun 26 at 0:45. Votes do not generate reputation, and it can be edited by users with 100 rep">
+            community wiki
+        </span>
+    </div><br>
+    <div class="user-details">
+        <a id="history-24420824" href="http://stackoverflow.com/posts/24420824/revisions" title="show revision history for this post">
+        The Bear
+        </a>
+    </div>
+</div>
+    </td>
+    </tr>
+    </tbody></table>
+</td>
+        </tr>
+        
+<tr>
+    <td class="votecell"></td>
+    <td>
+	    <div id="comments-24420824" class="comments  dno" data-localized="true">
+		    <table>
+			    <tbody data-remaining-comments-count="0" data-addlink-html="add comment" data-addlink-disabled="true">
+					    <tr><td></td><td></td></tr>
+			    </tbody>
+		    </table>
+	    </div>
+			<a id="comments-link-24420824" data-rep="50" data-anon="true" class="comments-link disabled-link" title="Use comments to ask for more information or suggest improvements. Avoid comments like “+1” or “thanks”.">add comment</a>
+    </td>
+</tr>    </tbody></table>
+</div>
+									<a name="new-answer"></a>
+						<form id="post-form" action="http://stackoverflow.com/questions/1106929/answer/submit" method="post" class="post-form">
+						    <input type="hidden" id="post-id" value="1106929">
+                            <input type="hidden" id="qualityBanWarningShown" name="qualityBanWarningShown" value="false">
+							<h2 class="space">Your Answer</h2>
+
+
+
+    
+
+<script>
+    StackExchange.ready(function() {
+        initTagRenderer("".split(" "), "".split(" "));
+         
+        prepareEditor({
+            heartbeatType: 'answer',
+            bindNavPrevention: true,
+            postfix: "",
+            onDemand: true,
+            discardSelector: ".discard-answer"
+            ,immediatelyShowMarkdownHelp:true
+        });
+        
+
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">
+
+    <div style="position: relative;">     
+        <div class="wmd-container">
+            <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li id="wmd-bold-button" class="wmd-button" style="left: 0px;"><span style="background-position: 0px -20px;"></span></li><li id="wmd-italic-button" class="wmd-button" style="left: 25px;"><span style="background-position: -20px -20px;"></span></li><li id="wmd-spacer1" class="wmd-spacer" style="left: 50px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-link-button" class="wmd-button" style="left: 75px;"><span style="background-position: -40px -20px;"></span></li><li id="wmd-quote-button" class="wmd-button" style="left: 100px;"><span style="background-position: -60px -20px;"></span></li><li id="wmd-code-button" class="wmd-button" style="left: 125px;"><span style="background-position: -80px -20px;"></span></li><li id="wmd-image-button" class="wmd-button" style="left: 150px;"><span style="background-position: -100px -20px;"></span></li><li id="wmd-spacer2" class="wmd-spacer" style="left: 175px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-olist-button" class="wmd-button" style="left: 200px;"><span style="background-position: -120px -20px;"></span></li><li id="wmd-ulist-button" class="wmd-button" style="left: 225px;"><span style="background-position: -140px -20px;"></span></li><li id="wmd-heading-button" class="wmd-button" style="left: 250px;"><span style="background-position: -160px -20px;"></span></li><li id="wmd-hr-button" class="wmd-button" style="left: 275px;"><span style="background-position: -180px -20px;"></span></li><li id="wmd-spacer3" class="wmd-spacer" style="left: 300px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-undo-button" class="wmd-button" style="left: 325px;"><span style="background-position: -200px -20px;"></span></li><li id="wmd-redo-button" class="wmd-button" style="left: 350px;"><span style="background-position: -220px -20px;"></span></li></ul></div>
+            <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101" data-min-length=""></textarea>
+        </div>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+    <div id="draft-discarded" class="draft-discarded community-option fl" style="margin-top: 8px; height:24px; display:none;">draft discarded</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" type="hidden" value="0cf87f5d7fea645c414c72faf63f1c09">
+        <input id="author" name="author" type="text">
+    </div>
+</div>
+							<div style="position: relative;">
+								
+            <div class="form-item new-post-login">
+        
+                <div class="new-login-form">
+                    <div class="new-login-left">
+                        <h3>Sign up or <a id="login-link" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f1106929%2ffind-all-combinations-of-coins-when-given-some-dollar-value%23new-answer">log in</a></h3>
+                        <script>
+                            StackExchange.ready(function () {
+                                StackExchange.helpers.onClickDraftSave('#login-link');
+                            });
+                        </script>
+                        <div class="preferred-login google-login">
+                            <p><span class="icon"></span><span>Sign up using Google</span></p>
+                        </div>
+                        <div class="preferred-login facebook-login">
+                            <p><span class="icon"></span><span>Sign up using Facebook</span></p>
+                        </div>
+                        <div class="preferred-login stackexchange-login">
+                            <p><span class="icon"></span><span>Sign up using Stack Exchange</span></p>
+                        </div>
+                    </div>
+                    <input type="hidden" name="manual-openid" class="manual-openid">
+                    <input type="hidden" name="use-facebook" class="use-facebook" value="false">
+                    <input type="button" class="submit-openid" value="Submit" style="display:none">
+                    <div class="new-login-right">
+                                <h3>Post as a guest</h3>
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+                    <script>
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            </script>
+            <td class="vm">
+                <div>
+                    <label for="display-name">Name</label>
+                    <input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105">
+                </div>
+                <div>
+                    <label for="m-address">Email</label>
+                    <input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106">
+                    <span class="edit-field-overlay">required, but not shown</span>
+                </div>
+            </td>
+        </tr>
+        </tbody></table>
+    </div>
+
+                    </div>
+                </div>
+            </div>
+            <script>
+                StackExchange.ready(
+                    function () {
+                        StackExchange.openid.initPostLogin('.new-post-login', '%2fquestions%2f1106929%2ffind-all-combinations-of-coins-when-given-some-dollar-value%23new-answer');
+                    }
+                );
+            </script>
+            <noscript>
+                        &lt;h3&gt;Post as a guest&lt;/h3&gt;
+    &lt;div class="form-item"&gt;
+        &lt;table&gt;
+        &lt;tr&gt;
+                    &lt;script&gt;
+                StackExchange.ready(function () {
+                    StackExchange.helpers.bindHelpOverlayEvents($('.vm input'));
+                });
+            &lt;/script&gt;
+            &lt;td class="vm"&gt;
+                &lt;div&gt;
+                    &lt;label for="display-name"&gt;Name&lt;/label&gt;
+                    &lt;input id="display-name" name="display-name" type="text" size="30" maxlength="30" value="" tabindex="105"&gt;
+                &lt;/div&gt;
+                &lt;div&gt;
+                    &lt;label for="m-address"&gt;Email&lt;/label&gt;
+                    &lt;input id="m-address" name="m-address" type="text" size="30" maxlength="100" value="" tabindex="106"&gt;
+                    &lt;span class="edit-field-overlay"&gt;required, but not shown&lt;/span&gt;
+                &lt;/div&gt;
+            &lt;/td&gt;
+        &lt;/tr&gt;
+        &lt;/table&gt;
+    &lt;/div&gt;
+
+            </noscript>
+							</div>
+           
+															<div class="form-submit cbt">
+									<input id="submit-button" type="submit" value="Post Your Answer" tabindex="110">
+									<a href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value#" class="discard-answer dno">discard</a>
+
+<p class="privacy-policy-agreement">
+By posting your answer, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">								</div>
+						</form>
+
+
+
+						<h2 class="bottom-notice" data-loc="1">
+Not the answer you're looking for?							Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/algorithm" class="post-tag" title="show questions tagged &#39;algorithm&#39;" rel="tag">algorithm</a> <a href="http://stackoverflow.com/questions/tagged/project-euler" class="post-tag" title="show questions tagged &#39;project-euler&#39;" rel="tag">project-euler</a> <a href="http://stackoverflow.com/questions/tagged/puzzle" class="post-tag" title="show questions tagged &#39;puzzle&#39;" rel="tag">puzzle</a>  or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.						</h2>
+			</div>
+		</div>
+				<div id="sidebar" class="show-votes">
+						    <div class="module question-stats">
+			        <table id="qinfo">
+			            <tbody><tr>
+			                <td>
+			                    <p class="label-key">asked</p>
+			                </td>
+			                <td style="padding-left: 10px">
+			                    <p class="label-key" title="2009-07-09 23:17:28Z"><b>5 years ago</b></p>
+			                </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    <p class="label-key">viewed</p>
+			                </td>
+
+			                <td style="padding-left: 10px">
+			                    <p class="label-key">
+			                        <b>58281 times</b>
+			                    </p>
+			                </td>
+			            </tr>
+			                <tr>
+			                    <td>
+			                        <p class="label-key">active</p>
+			                    </td>
+			                    <td style="padding-left: 10px">
+			                        <p class="label-key"><b><a href="http://stackoverflow.com/questions/1106929/find-all-combinations-of-coins-when-given-some-dollar-value?lastactivity" class="lastactivity-link" title="2014-06-26 00:45:30Z">28 days ago</a></b></p>
+			                    </td>
+			                </tr>
+			        </tbody></table>
+			    </div>
+			<div class="module community-bulletin" data-tracker="cb=1">
+    <div class="related">
+                <div class="bulletin-title">
+                    Blog
+                </div>
+                <hr>
+    <div class="spacer">
+        <div class="bulletin-item-type">
+                <a href="http://blog.stackoverflow.com/2014/07/please-welcome-jmac-community-manager-of-the-rising-sun/?cb=1" class="question-hyperlink">
+<div class="favicon favicon-stackexchangemeta" title="Meta Stack Exchange"></div>                </a>
+            </div>
+                <div class="bulletin-item-content">
+                    <a href="http://blog.stackoverflow.com/2014/07/please-welcome-jmac-community-manager-of-the-rising-sun/?cb=1" class="question-hyperlink">Please welcome jmac, Community Manager of the Rising Sun</a>
+                </div>
+                <br class="cbt">
+            </div>
+    </div>
+</div>			
+			<div class="everyonelovesstackoverflow" id="careers2">
+        </div>
+        <div id="hireme" class="flat-orange looking tagged">  <a href="http://careers.stackoverflow.com/?a=Fyw" class="top" target="_blank"> <span>Looking for a job?</span> </a> <ul class="jobs"> <li> <a href="http://careers.stackoverflow.com/jobs/61980/principal-engineer-lukup-media?a=1dAEWBZNS" target="_blank" title="Principal Engineer at Lukup Media. Click to learn more."> Principal Engineer<br> <span class="company">Lukup Media</span> <span class="location">Bangalore, India</span> <span class="post-tag">java</span> <span class="post-tag">android</span> <br> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/61225/lead-software-engineer-back-end-web-capital-one?a=1cFxVwkgw" target="_blank" title="Lead Software Engineer – Back End Web at Capital One. Click to learn more."> Lead Software Engineer – Back End Web<br> <span class="company">Capital One</span> <span class="location">Nottingham, UK</span> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/63132/aspnet-c-sharp-web-developer-axero-solutions-llc?a=1eZLGYjYc" target="_blank" title="ASP.NET / C# Web Developer at Axero Solutions. Click to learn more."> ASP.NET / C# Web Developer<br> <span class="company">Axero Solutions</span> <span class="location">Delhi, India</span> <span class="post-tag">asp.net</span> <span class="post-tag">c#</span> <br> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/60555/net-developers-senior-developers-morgan-stanley?a=1bQUkDLvW" target="_blank" title=".NET Developers / Senior Developers at Morgan Stanley. Click to learn more."> .NET Developers / Senior Developers<br> <span class="company">Morgan Stanley</span> <span class="location">Mumbai, India / relocation</span> <span class="post-tag">c#</span> <span class="post-tag">.net</span> <br> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/40083/engineering-lead-at-a-profitable-saas-startup-aplopio-recruiterbox?a=MSUxMBTa" target="_blank" title="Engineering Lead at a profitable SaaS startup at Aplopio / Recruiterbox. Click to learn more."> Engineering Lead at a profitable SaaS startup<br> <span class="company">Aplopio / Recruiterbox</span> <span class="location">Bangalore, India / relocation</span> <span class="post-tag">python</span> <span class="post-tag">django</span> <br> </a> </li> <li> <a href="http://careers.stackoverflow.com/jobs/61442/cloud-scalable-systems-architect-fission-labs?a=1cVYII97a" target="_blank" title="Cloud &amp; Scalable Systems Architect at Fission Labs. Click to learn more."> Cloud &amp; Scalable Systems Architect<br> <span class="company">Fission Labs</span> <span class="location">Hyderabad, India</span> <span class="post-tag">java</span> <span class="post-tag">architecture</span> <br> </a> </li> </ul> <img alt="" class="impression" src="./algorithm - Find all combinations of coins when given some dollar value - Stack Overflow_files/1dAEWBZNS-1cFxVwkgw-1eZLGYjYc-1bQUkDLvW-MSUxMBTa-1cVYII97a-Fyw" style="display:none"></div>
+			<div style="margin-bottom: 10px;">
+        
+
+<style type="text/css">
+#newsletter-ad {
+    width: 190px;
+    height: 250px;
+    overflow: hidden;
+    background: url('//cdn.sstatic.net/stackoverflow/img/newsletter-ad.png');
+    padding: 0 15px 0 15px;
+}
+#newsletter-ad-header {
+    margin-top: 60px;
+}
+#newsletter-ad ul {
+    margin: 1em 0 1em 1.5em;
+}
+#newsletter-ad ul li {
+    margin-bottom: 5px;
+}
+#newsletter-signup-container {
+    text-align: center;
+}
+#newsletter-preview-container {
+    margin-top: 10px;
+    text-align: center;
+}
+#newsletter-email-input {
+    width: 200px;
+}
+</style>
+
+<script>
+    StackExchange.ready(function () {
+        StackExchange.newsletterAd.init();
+    });
+</script>
+
+<div id="newsletter-ad">
+    <p id="newsletter-ad-header">Get the <b>weekly newsletter!</b></p>
+    <ul>
+        <li>Top questions and answers</li>
+        <li>Important announcements</li>
+        <li>Unanswered questions</li>
+    </ul>
+    <div id="newsletter-signup-container"><input id="newsletter-signup" type="button" value="Sign up for the newsletter"></div>
+    <p id="newsletter-preview-container">see an <a href="http://stackexchange.com/newsletters/newsletter?site=stackoverflow.com" id="newsletter-preview">example newsletter</a></p>
+    <div class="dno">
+        
+<p class="privacy-policy-agreement">
+By subscribing, you agree to the <a href="http://stackexchange.com/legal/privacy-policy" target="_blank">privacy policy</a> and <a href="http://stackexchange.com/legal/terms-of-service" target="_blank">terms of service</a>.</p>
+<input type="hidden" name="legalLinksShown" value="1">
+    </div>
+</div>
+
+    </div>  
+    
+            <div class="module sidebar-linked">
+	<h4 id="h-linked">Linked</h4>
+	<div class="linked" data-tracker="lq=1">
+<div class="spacer">
+	<a href="http://stackoverflow.com/q/5897184?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">6</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/5897184/algorithm-to-determine-coin-combinations?lq=1" class="question-hyperlink">Algorithm to determine coin combinations</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/8175840?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">7</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/8175840/compute-the-different-ways-to-make-money-change-from-167-37?lq=1" class="question-hyperlink">Compute the different ways to make (money) change from $167.37?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/7331093?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">3</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/7331093/getting-all-possible-sums-that-add-up-to-a-given-number?lq=1" class="question-hyperlink">Getting all possible sums that add up to a given number</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/10989585?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/10989585/python-creating-a-list-with-itertools-product?lq=1" class="question-hyperlink">Python creating a list with itertools.product?</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/7067044?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/7067044/java-algorithm-to-solve-vendor-machine-change-giving-problem?lq=1" class="question-hyperlink">Java Algorithm to solve vendor machine 'change giving' problem</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/9206903?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/9206903/algorithm-to-get-all-combinations-of-american-football-point-accumulations-nec?lq=1" class="question-hyperlink">Algorithm to get all combinations of (American) football point-accumulations necessary to get a certain score N</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/2350880?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">2</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/2350880/c-sharp-2-array-split-amount-question?lq=1" class="question-hyperlink">C# 2 Array Split Amount Question</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/8380687?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/8380687/total-number-of-ways-to-count-the-possible-combination-for-coin?lq=1" class="question-hyperlink">Total number of ways to count the possible combination for coin</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/11011516?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes  default">0</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/11011516/algorithm-for-determining-number-of-possible-combinations?lq=1" class="question-hyperlink">Algorithm for determining number of possible combinations</a>
+</div><div class="spacer">
+	<a href="http://stackoverflow.com/q/3249512?lq=1" title="Vote score (upvotes - downvotes)">
+		<div class="answer-votes answered-accepted default">1</div>
+	</a>
+	<a href="http://stackoverflow.com/questions/3249512/all-possible-combinations?lq=1" class="question-hyperlink">all possible combinations </a>
+</div>					<div class="spacer more">
+				<a href="http://stackoverflow.com/questions/linked/1106929?lq=1">see more linked questions…</a>
+			</div>
+	</div>
+</div>
+
+				<div class="module sidebar-related">
+					<h4 id="h-related">Related</h4>
+                    <div class="related js-gps-related-questions" data-tracker="rq=1">
+                        <div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/14884?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">8
+    </div>
+</a><a href="http://stackoverflow.com/questions/14884/find-the-best-combination-from-a-given-set-of-multiple-sets?rq=1" class="question-hyperlink">Find the best combination from a given set of multiple sets</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/1174249?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes default">5
+    </div>
+</a><a href="http://stackoverflow.com/questions/1174249/square-puzzle-solution?rq=1" class="question-hyperlink">square puzzle solution</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/3947867?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">42
+    </div>
+</a><a href="http://stackoverflow.com/questions/3947867/find-the-least-number-of-coins-required-that-can-make-any-change-from-1-to-99-ce?rq=1" class="question-hyperlink">Find the least number of coins required that can make any change from 1 to 99 cents</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/7153659?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted large">476
+    </div>
+</a><a href="http://stackoverflow.com/questions/7153659/find-an-integer-not-among-four-billion-given-ones?rq=1" class="question-hyperlink">Find an integer not among four billion given ones</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9518261?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">5
+    </div>
+</a><a href="http://stackoverflow.com/questions/9518261/determine-the-combinations-of-making-change-for-a-given-amount?rq=1" class="question-hyperlink">Determine the combinations of making change for a given amount</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9731695?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">2
+    </div>
+</a><a href="http://stackoverflow.com/questions/9731695/find-all-possible-combinations-of-a-scores-consistent-with-data?rq=1" class="question-hyperlink">Find all possible combinations of a scores consistent with data</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/9774366?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">4
+    </div>
+</a><a href="http://stackoverflow.com/questions/9774366/given-4-arrays-find-number-of-quadruples-having-zero-sum?rq=1" class="question-hyperlink">Given 4 arrays, find number of quadruples having zero sum</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/14919628?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">1
+    </div>
+</a><a href="http://stackoverflow.com/questions/14919628/given-n-marbles-and-m-floors-find-the-algorithm-to-find-the-lowest-floor-from-w?rq=1" class="question-hyperlink">Given N marbles and M floors, find the algorithm to find the lowest floor from which marble would break</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/16748903?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">-3
+    </div>
+</a><a href="http://stackoverflow.com/questions/16748903/given-n-coins-some-of-which-are-heavier-find-the-number-of-heavy-coins?rq=1" class="question-hyperlink">Given n coins, some of which are heavier, find the number of heavy coins?</a>
+</div>
+<div class="spacer js-gps-track">
+<a href="http://stackoverflow.com/q/20349087?rq=1" title="Vote score (upvotes - downvotes)">
+    <div class="answer-votes answered-accepted default">0
+    </div>
+</a><a href="http://stackoverflow.com/questions/20349087/finding-the-counterfeit-coin-from-a-list-of-9-coins?rq=1" class="question-hyperlink">Finding the counterfeit coin from a list of 9 coins</a>
+</div>
+
+                    </div>
+				</div>
+            
+<div id="hot-network-questions" class="module">
+    <h4>
+        <a href="http://stackexchange.com/questions?tab=hot" class="js-gps-track" data-gps-track="posts_hot_network.click({ item_type:1, location:11 })">
+            Hot Network Questions
+        </a>
+    </h4>
+    <ul>
+            <li>
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="http://stats.stackexchange.com/questions/109076/what-is-your-favorite-statistical-graph" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What is your favorite statistical graph?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-workplace" title="The Workplace Stack Exchange"></div><a href="http://workplace.stackexchange.com/questions/31166/what-can-be-done-to-prevent-people-from-leaving-their-ringing-cell-phones-on-the" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:423 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What can be done to prevent people from leaving their ringing cell phones on their desks?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/35477/why-goog-is-after-hours-while-fb-is-pre-market" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why GOOG is "After Hours" while FB is "Pre-market"?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-money" title="Personal Finance &amp; Money Stack Exchange"></div><a href="http://money.stackexchange.com/questions/35439/why-is-paying-mortgage-interest-considered-by-some-to-be-beneficial" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:93 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why is paying mortgage interest considered by some to be beneficial?
+                </a>
+
+            </li>
+            <li>
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/24932717/sizeof-ternary-expression" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    `sizeof` ternary expression
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-french" title="French Language Stack Exchange"></div><a href="http://french.stackexchange.com/questions/11409/how-to-ask-how-often-in-french" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:299 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How to ask "how often" in French?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-unix" title="Unix &amp; Linux Stack Exchange"></div><a href="http://unix.stackexchange.com/questions/146342/find-the-exact-string-with-grep" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:106 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Find the exact string with grep
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-physics" title="Physics Stack Exchange"></div><a href="http://physics.stackexchange.com/questions/127791/which-ball-touches-the-ground-first" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:151 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Which ball touches the ground first?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-tex" title="TeX - LaTeX Stack Exchange"></div><a href="http://tex.stackexchange.com/questions/192994/writing-roman-numbers-in-equation" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:85 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Writing Roman numbers in Equation
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-martialarts" title="Martial Arts Stack Exchange"></div><a href="http://martialarts.stackexchange.com/questions/4230/teaching-ukemi-to-children" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:403 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Teaching ukemi to children
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/876982/does-there-exist-two-distinct-set-which-are-not-an-element-of-a-given-infinite-s" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does there exist two distinct set which are not an element of a given infinite set?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/24938564/does-abstract-class-extend-object" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does abstract class extend Object?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/875973/what-are-some-conceptualizations-that-work-in-mathematics-but-are-not-strictly" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    What are some "conceptualizations" that work in mathematics but are not strictly true?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-serverfault" title="Server Fault"></div><a href="http://serverfault.com/questions/614523/raid-5-two-disks-failed-simultaneously" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:2 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    RAID-5: Two disks failed simultaneously?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-travel" title="Travel Stack Exchange"></div><a href="http://travel.stackexchange.com/questions/34246/travel-from-london-to-paris-or-zurich-by-train-without-a-schengen-visa" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:273 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Travel from London to Paris or Zurich by train without a Schengen visa
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-skeptics" title="Skeptics Stack Exchange"></div><a href="http://skeptics.stackexchange.com/questions/22489/does-the-nonstop-elevator-hack-work" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:212 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Does the "Nonstop Elevator Hack" work?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stackoverflow" title="Stack Overflow"></div><a href="http://stackoverflow.com/questions/24933592/certain-errors-in-uninstantiated-template-not-reported-by-g" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:1 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Certain errors in uninstantiated template not reported by g++
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-stats" title="Cross Validated"></div><a href="http://stats.stackexchange.com/questions/109210/the-daily-job-routine-of-the-machine-learning-scientist" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:65 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    The daily job routine of the machine learning scientist?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-programmers" title="Programmers Stack Exchange"></div><a href="http://programmers.stackexchange.com/questions/250991/is-immutability-very-worthwhile-when-there-is-no-concurrency" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:131 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Is immutability very worthwhile when there is no concurrency?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-math" title="Mathematics Stack Exchange"></div><a href="http://math.stackexchange.com/questions/876922/intuitive-way-to-get-fromula-of-cubic-sum" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:69 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    intuitive way to get fromula of cubic sum
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-superuser" title="Super User"></div><a href="http://superuser.com/questions/786563/file-sizes-in-windows-not-making-sense" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:3 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    File sizes in Windows not making sense
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-scifi" title="Science Fiction &amp; Fantasy Stack Exchange"></div><a href="http://scifi.stackexchange.com/questions/63872/why-does-snape-weaken-harrys-protection-against-legilimency" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:186 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    Why does Snape weaken Harry's protection against legilimency?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-security" title="Information Security Stack Exchange"></div><a href="http://security.stackexchange.com/questions/63757/how-is-google-chrome-managing-authentication-to-sites" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:162 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    How is Google Chrome managing authentication to sites?
+                </a>
+
+            </li>
+            <li class="dno js-hidden" style="display: list-item;">
+                <div class="favicon favicon-rpg" title="Role-playing Games Stack Exchange"></div><a href="http://rpg.stackexchange.com/questions/44835/as-a-gm-how-can-i-stop-killing-my-games" class="js-gps-track" data-gps-track="site.switch({ item_type:11, target_site:122 }); posts_hot_network.click({ item_type:2, location:11 })">
+                    As a GM, how can I stop killing my games?
+                </a>
+
+            </li>
+    </ul>
+
+        
+</div>
+		</div>
+	
+<div id="feed-link">
+    <div id="feed-link-text">
+        <a href="http://stackoverflow.com/feeds/question/1106929" title="feed of this question and its answers">
+            <span class="feed-icon"></span>question feed
+        </a>
+    </div>
+</div>	<script>
+StackExchange.ready(function(){$.get('/posts/1106929/ivc/d026');});
+</script>
+<noscript>
+    &lt;div&gt;&lt;img src="/posts/1106929/ivc/d026" class="dno" alt="" width="0" height="0"&gt;&lt;/div&gt;
+</noscript><div style="display:none" id="prettify-lang"></div></div>
+
+
+
+        </div>
+    </div>
+    <div id="footer" class="categories">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <div class="top-footer-links">
+                        <a href="http://stackoverflow.com/tour">tour</a>
+                    <a href="http://stackoverflow.com/help">help</a>
+                        <a href="http://stackoverflow.com/help/badges">badges</a>
+                    <a href="http://blog.stackoverflow.com/?blb=1">blog</a>
+                        <a href="http://chat.stackoverflow.com/">chat</a>
+                    <a href="http://data.stackexchange.com/">data</a>
+                    <a href="http://stackexchange.com/legal">legal</a>
+                    <a href="http://stackexchange.com/legal/privacy-policy">privacy policy</a>
+                    <a href="http://stackexchange.com/work-here">work here</a>
+                    <a href="http://stackexchange.com/mediakit">advertising info</a>
+
+                    <a onclick="StackExchange.switchMobile(&quot;on&quot;)">mobile</a>
+                    <b><a href="http://stackoverflow.com/contact">contact us</a></b>
+                        <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                    
+                </div>
+                <div id="footer-sites">
+                    <table>
+    <tbody><tr>
+            <th colspan="3">
+                Technology
+            </th>
+            <th>
+                Life / Arts
+            </th>
+            <th>
+                Culture / Recreation
+            </th>
+            <th>
+                Science
+            </th>
+            <th>
+                Other
+            </th>
+    </tr>
+    <tr>
+            <td>
+                <ol>
+                        <li><a href="http://stackoverflow.com/" title="professional and enthusiast programmers">Stack Overflow</a></li>
+                        <li><a href="http://serverfault.com/" title="professional system and network administrators">Server Fault</a></li>
+                        <li><a href="http://superuser.com/" title="computer enthusiasts and power users">Super User</a></li>
+                        <li><a href="http://webapps.stackexchange.com/" title="power users of web applications">Web Applications</a></li>
+                        <li><a href="http://askubuntu.com/" title="Ubuntu users and developers">Ask Ubuntu</a></li>
+                        <li><a href="http://webmasters.stackexchange.com/" title="pro webmasters">Webmasters</a></li>
+                        <li><a href="http://gamedev.stackexchange.com/" title="professional and independent game developers">Game Development</a></li>
+                        <li><a href="http://tex.stackexchange.com/" title="users of TeX, LaTeX, ConTeXt, and related typesetting systems">TeX - LaTeX</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://programmers.stackexchange.com/" title="professional programmers interested in conceptual questions about software development">Programmers</a></li>
+                        <li><a href="http://unix.stackexchange.com/" title="users of Linux, FreeBSD and other Un*x-like operating systems.">Unix &amp; Linux</a></li>
+                        <li><a href="http://apple.stackexchange.com/" title="power users of Apple hardware and software">Ask Different (Apple)</a></li>
+                        <li><a href="http://wordpress.stackexchange.com/" title="WordPress developers and administrators">WordPress Development</a></li>
+                        <li><a href="http://gis.stackexchange.com/" title="cartographers, geographers and GIS professionals">Geographic Information Systems</a></li>
+                        <li><a href="http://electronics.stackexchange.com/" title="electronics and electrical engineering professionals, students, and enthusiasts">Electrical Engineering</a></li>
+                        <li><a href="http://android.stackexchange.com/" title="enthusiasts and power users of the Android operating system">Android Enthusiasts</a></li>
+                        <li><a href="http://security.stackexchange.com/" title="Information security professionals">Information Security</a></li>
+                            </ol></td><td><ol>
+                        <li><a href="http://dba.stackexchange.com/" title="database professionals who wish to improve their database skills and learn from others in the community">Database Administrators</a></li>
+                        <li><a href="http://drupal.stackexchange.com/" title="Drupal developers and administrators">Drupal Answers</a></li>
+                        <li><a href="http://sharepoint.stackexchange.com/" title="SharePoint enthusiasts">SharePoint</a></li>
+                        <li><a href="http://ux.stackexchange.com/" title="user experience researchers and experts">User Experience</a></li>
+                        <li><a href="http://mathematica.stackexchange.com/" title="users of Mathematica">Mathematica</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#technology" class="more">
+                                more (14)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://photo.stackexchange.com/" title="professional, enthusiast and amateur photographers">Photography</a></li>
+                        <li><a href="http://scifi.stackexchange.com/" title="science fiction and fantasy enthusiasts">Science Fiction &amp; Fantasy</a></li>
+                        <li><a href="http://graphicdesign.stackexchange.com/" title="Graphic Design professionals, students, and enthusiasts">Graphic Design</a></li>
+                        <li><a href="http://cooking.stackexchange.com/" title="professional and amateur chefs">Seasoned Advice (cooking)</a></li>
+                        <li><a href="http://diy.stackexchange.com/" title="contractors and serious DIYers">Home Improvement</a></li>
+                        <li><a href="http://money.stackexchange.com/" title="people who want to be financially literate">Personal Finance &amp; Money</a></li>
+                        <li><a href="http://academia.stackexchange.com/" title="academics and those enrolled in higher education">Academia</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#lifearts" class="more">
+                                more (10)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://english.stackexchange.com/" title="linguists, etymologists, and serious English language enthusiasts">English Language &amp; Usage</a></li>
+                        <li><a href="http://skeptics.stackexchange.com/" title="scientific skepticism">Skeptics</a></li>
+                        <li><a href="http://judaism.stackexchange.com/" title="those who base their lives on Jewish law and tradition and anyone interested in learning more">Mi Yodeya (Judaism)</a></li>
+                        <li><a href="http://travel.stackexchange.com/" title="road warriors and seasoned travelers">Travel</a></li>
+                        <li><a href="http://christianity.stackexchange.com/" title="committed Christians, experts in Christianity and those interested in learning more">Christianity</a></li>
+                        <li><a href="http://gaming.stackexchange.com/" title="passionate videogamers on all platforms">Arqade (gaming)</a></li>
+                        <li><a href="http://bicycles.stackexchange.com/" title="people who build and repair bicycles, people who train cycling, or commute on bicycles">Bicycles</a></li>
+                        <li><a href="http://rpg.stackexchange.com/" title="gamemasters and players of tabletop, paper-and-pencil role-playing games">Role-playing Games</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#culturerecreation" class="more">
+                                more (21)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://math.stackexchange.com/" title="people studying math at any level and professionals in related fields">Mathematics</a></li>
+                        <li><a href="http://stats.stackexchange.com/" title="people interested in statistics, machine learning, data analysis, data mining, and data visualization">Cross Validated (stats)</a></li>
+                        <li><a href="http://cstheory.stackexchange.com/" title="theoretical computer scientists and researchers in related fields">Theoretical Computer Science</a></li>
+                        <li><a href="http://physics.stackexchange.com/" title="active researchers, academics and students of physics">Physics</a></li>
+                        <li><a href="http://mathoverflow.net/" title="professional mathematicians">MathOverflow</a></li>
+                    
+                        <li>
+                            <a href="http://stackexchange.com/sites#science" class="more">
+                                more (7)
+                            </a>
+                        </li>
+                </ol>
+            </td>
+            <td>
+                <ol>
+                        <li><a href="http://stackapps.com/" title="apps, scripts, and development with the Stack Exchange API">Stack Apps</a></li>
+                        <li><a href="http://meta.stackexchange.com/" title="meta-discussion of the Stack Exchange family of Q&amp;A websites">Meta Stack Exchange</a></li>
+                        <li><a href="http://area51.stackexchange.com/" title="proposing new sites in the Stack Exchange network">Area 51</a></li>
+                        <li><a href="http://careers.stackoverflow.com/">Stack Overflow Careers</a></li>
+                    
+                </ol>
+            </td>
+    </tr>
+</tbody></table>
+                </div>
+            </div>
+
+            <div id="copyright">
+                site design / logo © 2014 stack exchange inc; user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc by-sa 3.0</a> 
+                with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            <div id="svnrev">
+                rev 2014.7.23.1723
+            </div>
+            
+        </div>
+    </div>
+    <noscript>
+        &lt;div id="noscript-warning"&gt;Stack Overflow works best with JavaScript enabled&lt;img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"&gt;&lt;/div&gt;
+    </noscript>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () { (i[r].q = i[r].q || []).push(arguments) }, i[r].l = 1 * new Date(); a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m);
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-5620270-1');        
+        
+        ga('set', 'dimension2', '|algorithm|project-euler|puzzle|');         
+        ga('send', 'pageview');
+        var _qevents = _qevents || [],
+            _comscore = _comscore || [];
+        (function () {
+            var ssl='https:'==document.location.protocol,
+                s=document.getElementsByTagName('script')[0],
+                qc=document.createElement('script');
+            qc.async=true;
+            qc.src=(ssl?'https://secure':'http://edge')+'.quantserve.com/quant.js';
+            s.parentNode.insertBefore(qc, s);
+            var sc=document.createElement('script');
+            sc.async=true;
+            sc.src=(ssl?'https://sb':'http://b') + '.scorecardresearch.com/beacon.js';
+            s.parentNode.insertBefore(sc, s);
+        })();
+        _comscore.push({ c1: "2", c2: "17440561" });
+        _qevents.push({ qacct: "p-c1rF4kxgLUzNc" });
+    </script>        
+    
+    
+</body></html>
